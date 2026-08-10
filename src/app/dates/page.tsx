@@ -32,7 +32,7 @@ const calendarEvents: CalendarEvent[] = [
 
 export default function DatesPage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-14">
+    <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-14 3xl:max-w-4xl">
       <h1 className="mb-4 text-4xl font-extrabold tracking-tight">Key Dates</h1>
       <p className="mb-8 max-w-2xl">
         Nothing on this page is invented. Every date below will be filled in

@@ -2,6 +2,11 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
+  /* Custom breakpoint for large monitors/4K/TVs (1920px+ CSS px), so page
+     containers can widen one more step instead of staying pinned at the
+     2xl (1536px) width all the way up to a 4K display. */
+  --breakpoint-3xl: 120rem;
+
   /* System sans only, zero font bytes downloaded. One confident weight-driven
      typeface does the work a second face would otherwise do. */
   --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,

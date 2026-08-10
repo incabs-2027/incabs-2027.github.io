@@ -6,11 +6,11 @@ import { Nav } from "./Nav";
 export function Header() {
   return (
     <header className="border-b-4 border-[var(--color-gold)] bg-[var(--color-panel)]">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-4 py-3 sm:px-6">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-4 py-3 sm:px-6 3xl:max-w-7xl">
         <Link href="/" className="flex items-center gap-3">
           <span className="flex items-center justify-center rounded-lg bg-[var(--color-paper)] p-1.5 shadow-sm">
             <Image
-              src="/images/incabs-logo.png"
+              src="/images/incabs2-logo.png"
               alt={`${conference.acronym} ${conference.year} logo`}
               width={299}
               height={320}

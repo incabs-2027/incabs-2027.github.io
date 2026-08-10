@@ -11,34 +11,57 @@ export default function Home() {
       <section className="relative w-full overflow-hidden border-b-4 border-[var(--color-gold)] bg-[var(--color-panel)] text-[var(--color-panel-ink)]">
         {/* Static — no client JS on this page. See references/CLAUDE.md:
             "zero client JS on content pages," this audience is often on
-            metered mobile data. */}
+            metered mobile data. A full-bleed gradient + wide viewBox (with
+            preserveAspectRatio="slice") so the panel reads as designed —
+            not empty — from a phone up to a 4K/TV-width viewport, instead
+            of a fixed-size graphic pinned to one corner. */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-[radial-gradient(ellipse_100%_100%_at_100%_0%,var(--color-panel-raised),transparent_65%)]"
+        />
         <svg
           aria-hidden="true"
-          className="pointer-events-none absolute -bottom-16 -right-16 opacity-40 sm:-right-8"
-          width="420"
-          height="320"
-          viewBox="0 0 420 320"
+          className="pointer-events-none absolute inset-0 h-full w-full opacity-30"
+          preserveAspectRatio="xMidYMid slice"
+          viewBox="0 0 1600 640"
         >
           <g stroke="var(--color-accent)" strokeOpacity="0.4" strokeWidth="1">
-            <line x1="60" y1="70" x2="180" y2="130" />
-            <line x1="180" y1="130" x2="150" y2="240" />
-            <line x1="180" y1="130" x2="300" y2="100" />
-            <line x1="300" y1="100" x2="370" y2="190" />
-            <line x1="300" y1="100" x2="390" y2="50" />
-            <line x1="150" y1="240" x2="260" y2="270" />
+            <line x1="80" y1="90" x2="300" y2="60" />
+            <line x1="300" y1="60" x2="550" y2="140" />
+            <line x1="550" y1="140" x2="820" y2="120" />
+            <line x1="820" y1="120" x2="950" y2="220" />
+            <line x1="950" y1="220" x2="1120" y2="160" />
+            <line x1="950" y1="220" x2="1080" y2="340" />
+            <line x1="1120" y1="160" x2="1250" y2="280" />
+            <line x1="1250" y1="280" x2="1400" y2="180" />
+            <line x1="1250" y1="280" x2="1180" y2="500" />
+            <line x1="1400" y1="180" x2="1420" y2="380" />
+            <line x1="1400" y1="180" x2="1550" y2="120" />
+            <line x1="1420" y1="380" x2="1300" y2="460" />
+            <line x1="1420" y1="380" x2="1560" y2="420" />
+            <line x1="1300" y1="460" x2="1180" y2="500" />
+            <line x1="1080" y1="340" x2="980" y2="480" />
           </g>
           <g fill="var(--color-gold)">
-            <circle cx="60" cy="70" r="4" />
-            <circle cx="180" cy="130" r="5.5" />
-            <circle cx="150" cy="240" r="4" />
-            <circle cx="300" cy="100" r="5.5" />
-            <circle cx="370" cy="190" r="4" />
-            <circle cx="390" cy="50" r="3.5" />
-            <circle cx="260" cy="270" r="4" />
+            <circle cx="80" cy="90" r="3.5" />
+            <circle cx="300" cy="60" r="4" />
+            <circle cx="550" cy="140" r="4" />
+            <circle cx="820" cy="120" r="4" />
+            <circle cx="950" cy="220" r="5.5" />
+            <circle cx="1120" cy="160" r="4" />
+            <circle cx="1080" cy="340" r="4" />
+            <circle cx="1250" cy="280" r="5.5" />
+            <circle cx="1400" cy="180" r="4" />
+            <circle cx="1180" cy="500" r="4" />
+            <circle cx="1420" cy="380" r="5.5" />
+            <circle cx="1550" cy="120" r="3.5" />
+            <circle cx="1300" cy="460" r="4" />
+            <circle cx="1560" cy="420" r="3.5" />
+            <circle cx="980" cy="480" r="4" />
           </g>
         </svg>
 
-        <div className="relative mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-24">
+        <div className="relative mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-24 2xl:max-w-6xl 3xl:max-w-7xl">
           <p className="mb-4 font-mono text-xs font-bold uppercase tracking-[0.14em] text-[var(--color-accent)]">
             // {conference.hostOrg.acronym} presents
           </p>
@@ -72,7 +95,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-14">
+      <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-14 2xl:max-w-6xl 3xl:max-w-7xl">
         <section className="mb-14">
           <h2 className="mb-4 text-2xl font-extrabold tracking-tight">
             What this is

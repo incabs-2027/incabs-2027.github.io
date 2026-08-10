@@ -5,7 +5,7 @@ import { conference } from "@/lib/conference";
 export function Footer() {
   return (
     <footer className="mt-16 bg-[var(--color-panel)]">
-      <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+      <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 3xl:max-w-7xl">
         <Link href="/gyst-ai/conferences" className="flex items-center gap-3">
           <span className="flex items-center justify-center rounded-lg bg-[var(--color-paper)] p-1.5">
             <Image
