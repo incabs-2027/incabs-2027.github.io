@@ -1,0 +1,73 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  /* System sans only — zero font bytes downloaded. One confident weight-driven
+     typeface does the work a second face would otherwise do. */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+
+  --color-paper: #ffffff;
+  --color-paper-raised: #f5f6fa;
+  --color-ink: #12151c;
+  --color-ink-muted: #5b6270;
+  --color-border: #e2e5ea;
+
+  /* Deep emerald — text-safe (~5.5:1 on paper). Links, nav, borders, body-safe CTAs. */
+  --color-brand: #0b7857;
+  --color-brand-dark: #08573f;
+
+  /* Bright emerald — the one bold color move. Fills and dark-panel highlights
+     ONLY; ~2.5:1 on white, so it is never used as running text on paper. Pair
+     fills with --color-ink text, never white. */
+  --color-accent: #17b890;
+
+  /* The one dark "moment" — a full-bleed panel, used exactly once (home hero). */
+  --color-panel: #0b0e14;
+  --color-panel-ink: #f2f4f7;
+  --color-panel-muted: #b7bdc9;
+
+  /* Track wayfinding colors — badge fills (white text) and card border stripes
+     only, never running body-text color. */
+  --color-track-1: #0b7857; /* T1 healthcare */
+  --color-track-2: #8b2fa0; /* T2 genomics / drug discovery */
+  --color-track-3: #9c5e08; /* T3 ethics / policy */
+  --color-track-4: #2b3fe0; /* T4 emerging tech */
+
+  --color-reassurance: #eaf7f2;
+  --color-reassurance-border: #bfe3d6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 1rem; /* 16px minimum base */
+  line-height: 1.6; /* helps readers who aren't reading in their first language */
+}
+
+/* Visible focus states everywhere — full keyboard navigation is not optional. */
+:focus-visible {
+  outline: 3px solid var(--color-brand);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 50;
+  background: var(--color-brand);
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0 0 0.375rem 0;
+}
+
+.skip-link:focus {
+  left: 0;
+}

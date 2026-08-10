@@ -1,0 +1,60 @@
+import Link from "next/link";
+import type { Metadata } from "next";
+import { conference } from "@/lib/conference";
+
+// Temporary home: this page belongs to the separate GYST-AI site
+// (gyst-ai.github.io), not to inCABS 2027. It lives in this repo for now
+// because that site hasn't been split into its own repo yet. When it is,
+// move this file across and change the Link below from "/" to the inCABS
+// site's real absolute URL.
+
+export const metadata: Metadata = {
+  title: `Conferences — ${conference.hostOrg.name}`,
+};
+
+export default function GystAiConferencesPage() {
+  return (
+    <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-14">
+      <p className="mb-2 text-sm font-bold uppercase tracking-wide text-[var(--color-brand)]">
+        {conference.hostOrg.acronym}
+      </p>
+      <h1 className="mb-4 text-4xl font-extrabold tracking-tight">
+        Conferences
+      </h1>
+      <p className="mb-10 max-w-2xl text-[var(--color-ink-muted)]">
+        {conference.hostOrg.name} ({conference.hostOrg.acronym}) runs
+        conferences and programs for high school students worldwide —{" "}
+        {conference.hostOrg.tagline}. Here&apos;s what&apos;s currently
+        running.
+      </p>
+
+      <div className="mb-6 rounded-lg border-l-4 border-l-[var(--color-brand)] bg-[var(--color-paper)] p-6 shadow-sm">
+        <p className="mb-1 text-xs font-bold uppercase tracking-wide text-[var(--color-brand)]">
+          Inaugural edition · Call for Papers published
+        </p>
+        <h2 className="mb-2 text-2xl font-extrabold tracking-tight">
+          {conference.acronym} {conference.year}
+        </h2>
+        <p className="mb-1 font-medium text-[var(--color-ink-muted)]">
+          {conference.name}
+        </p>
+        <p className="mb-4">
+          {conference.theme.title} — a student research conference for high
+          school researchers worldwide, individually or in teams.
+        </p>
+        <Link
+          href="/"
+          className="inline-block font-semibold text-[var(--color-brand)] underline underline-offset-2"
+        >
+          Visit the {conference.acronym} {conference.year} site →
+        </Link>
+      </div>
+
+      <p className="text-sm text-[var(--color-ink-muted)]">
+        Future editions of {conference.acronym}, and future{" "}
+        {conference.hostOrg.acronym} programs, will be listed here as
+        they&apos;re announced.
+      </p>
+    </div>
+  );
+}
