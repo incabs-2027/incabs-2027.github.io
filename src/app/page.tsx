@@ -3,44 +3,21 @@ import { conference } from "@/lib/conference";
 import { TBA } from "@/components/TBA";
 import { TrackCard } from "@/components/TrackCard";
 import { Callout } from "@/components/Callout";
+import { NodeGraph } from "@/components/NodeGraph";
 
 export default function Home() {
   return (
     <>
-      <section className="relative w-full overflow-hidden bg-[var(--color-panel)] text-[var(--color-panel-ink)]">
-        <svg
-          aria-hidden="true"
-          className="pointer-events-none absolute -bottom-16 -right-16 opacity-40 sm:-right-8"
-          width="420"
-          height="320"
-          viewBox="0 0 420 320"
-        >
-          <g stroke="#ffffff" strokeOpacity="0.5" strokeWidth="1">
-            <line x1="60" y1="70" x2="180" y2="130" />
-            <line x1="180" y1="130" x2="150" y2="240" />
-            <line x1="180" y1="130" x2="300" y2="100" />
-            <line x1="300" y1="100" x2="370" y2="190" />
-            <line x1="300" y1="100" x2="390" y2="50" />
-            <line x1="150" y1="240" x2="260" y2="270" />
-          </g>
-          <g fill="var(--color-accent)">
-            <circle cx="60" cy="70" r="4" />
-            <circle cx="180" cy="130" r="5.5" />
-            <circle cx="150" cy="240" r="4" />
-            <circle cx="300" cy="100" r="5.5" />
-            <circle cx="370" cy="190" r="4" />
-            <circle cx="390" cy="50" r="3.5" />
-            <circle cx="260" cy="270" r="4" />
-          </g>
-        </svg>
+      <section className="relative w-full overflow-hidden border-b-4 border-[var(--color-gold)] bg-[var(--color-panel)] text-[var(--color-panel-ink)]">
+        <NodeGraph />
 
         <div className="relative mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-24">
-          <p className="mb-4 text-sm font-bold uppercase tracking-wide text-[var(--color-accent)]">
-            {conference.hostOrg.acronym} presents
+          <p className="mb-4 font-mono text-xs font-bold uppercase tracking-[0.14em] text-[var(--color-accent)]">
+            // {conference.hostOrg.acronym} presents
           </p>
-          <h1 className="max-w-3xl text-4xl font-extrabold leading-[1.08] tracking-tight sm:text-5xl">
+          <h1 className="max-w-3xl text-4xl font-extrabold leading-[1.08] tracking-tight text-balance sm:text-5xl">
             AI in biomedical sciences, from the{" "}
-            <span className="text-[var(--color-accent)]">researchers</span>{" "}
+            <span className="text-[var(--color-gold)]">researchers</span>{" "}
             who&apos;ll shape it next.
           </h1>
           <p className="mt-5 max-w-2xl text-lg font-semibold text-[var(--color-panel-ink)]">
@@ -54,7 +31,7 @@ export default function Home() {
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href="/call-for-papers"
-              className="rounded-md bg-[var(--color-accent)] px-5 py-3 text-sm font-bold text-[var(--color-ink)] hover:bg-[var(--color-brand)] hover:text-white"
+              className="rounded-md bg-[var(--color-gold)] px-5 py-3 text-sm font-bold text-[var(--color-ink)] hover:bg-[#dcb567]"
             >
               Read the Call for Papers
             </Link>
@@ -92,38 +69,40 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="mb-14 rounded-lg bg-[var(--color-paper-raised)] p-5 shadow-sm sm:p-6">
-          <h2 className="mb-4 text-xl font-extrabold tracking-tight">
+        <section className="mb-14 rounded-lg border border-[var(--color-border)] bg-[var(--color-paper-raised)] p-5 sm:p-6">
+          <h2 className="mb-5 text-xl font-extrabold tracking-tight">
             Key details
           </h2>
-          <dl className="grid gap-4 sm:grid-cols-3">
-            <div>
-              <dt className="text-sm text-[var(--color-ink-muted)]">Format</dt>
-              <dd className="mt-1">
+          <dl className="grid gap-5 sm:grid-cols-3">
+            <div className="border-l-2 border-[var(--color-accent)] pl-4">
+              <dt className="font-mono text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
+                Format
+              </dt>
+              <dd className="mt-1.5 font-semibold">
                 <TBA value={conference.format.mode} label="Format" />
               </dd>
             </div>
-            <div>
-              <dt className="text-sm text-[var(--color-ink-muted)]">
+            <div className="border-l-2 border-[var(--color-accent)] pl-4">
+              <dt className="font-mono text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
                 Submission deadline
               </dt>
-              <dd className="mt-1">
+              <dd className="mt-1.5 font-semibold">
                 <TBA
                   value={conference.dates.submissionDeadline}
                   label="Submission deadline"
                 />
               </dd>
             </div>
-            <div>
-              <dt className="text-sm text-[var(--color-ink-muted)]">
+            <div className="border-l-2 border-[var(--color-accent)] pl-4">
+              <dt className="font-mono text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
                 Working language
               </dt>
-              <dd className="mt-1 font-semibold">{conference.language}</dd>
+              <dd className="mt-1.5 font-semibold">{conference.language}</dd>
             </div>
           </dl>
           <Link
             href="/dates"
-            className="mt-5 inline-block font-semibold text-[var(--color-brand)] underline underline-offset-2"
+            className="mt-6 inline-block font-semibold text-[var(--color-gold-ink)] underline underline-offset-2"
           >
             See the full schedule →
           </Link>

@@ -15,7 +15,7 @@ export function TBA({ value, label }: TBAProps) {
   return (
     <span
       role="status"
-      className="inline-flex items-center rounded-full bg-[var(--color-reassurance)] px-3 py-0.5 text-sm font-semibold uppercase tracking-wide text-[var(--color-brand)]"
+      className="inline-flex items-center rounded bg-[var(--color-gold-tint)] px-2.5 py-0.5 font-mono text-xs font-bold uppercase tracking-wide text-[var(--color-gold-ink)]"
     >
       {label && <span className="sr-only">{label}: </span>}
       To be announced

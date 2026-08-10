@@ -7,35 +7,49 @@
   --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
 
-  --color-paper: #ffffff;
-  --color-paper-raised: #f5f6fa;
-  --color-ink: #12151c;
-  --color-ink-muted: #5b6270;
-  --color-border: #e2e5ea;
+  /* System monospace, also zero bytes. Used only for data-like content —
+     track codes, dates, key-fact labels — never running prose. */
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas,
+    "Liberation Mono", monospace;
 
-  /* Deep emerald, text-safe (~5.5:1 on paper). Links, nav, borders, body-safe CTAs. */
-  --color-brand: #0b7857;
-  --color-brand-dark: #08573f;
+  /* Warm bone paper, not stark white — reads as a printed program, not a
+     template. */
+  --color-paper: #fbfaf7;
+  --color-paper-raised: #f2f0e9;
+  --color-ink: #12160f;
+  --color-ink-muted: #5c6157;
+  --color-border: #e4e1d5;
 
-  /* Bright emerald, the one bold color move. Fills and dark-panel highlights
-     ONLY; ~2.5:1 on white, so it is never used as running text on paper. Pair
-     fills with --color-ink text, never white. */
-  --color-accent: #17b890;
+  /* Dark teal, text-safe (~7.2:1 on paper). Links, nav, borders, body-safe CTAs. */
+  --color-brand: #0a5f55;
+  --color-brand-dark: #073f38;
 
-  /* The one dark "moment," a full-bleed panel used exactly once (home hero). */
-  --color-panel: #0b0e14;
-  --color-panel-ink: #f2f4f7;
-  --color-panel-muted: #b7bdc9;
+  /* Bright teal, the one bold color move (pulled from the logo mark). Fills
+     and dark-panel highlights ONLY; ~3:1 on paper, so it is never running
+     text there — it IS text-safe on --color-panel (~6.1:1). Pair paper fills
+     with --color-ink text, never white. */
+  --color-accent: #12a394;
 
-  /* Track wayfinding colors, used as badge fills (white text) and card border stripes
-     only, never running body-text color. */
-  --color-track-1: #0b7857; /* T1 healthcare */
-  --color-track-2: #8b2fa0; /* T2 genomics / drug discovery */
-  --color-track-3: #9c5e08; /* T3 ethics / policy */
-  --color-track-4: #2b3fe0; /* T4 emerging tech */
+  /* Gold, the prestige accent — CTAs, awards, dark-panel decoration. Fill
+     only (~2.3:1 on paper). Pair fills with --color-ink text. For gold as
+     running text on paper, use --color-gold-ink instead (~7.3:1). */
+  --color-gold: #c9a24b;
+  --color-gold-ink: #6b4f14;
+  --color-gold-tint: #f2e4c4;
 
-  --color-reassurance: #eaf7f2;
-  --color-reassurance-border: #bfe3d6;
+  /* Deep navy chrome — header, hero, and footer, not a one-off hero band.
+     This is the site's second "surface," as deliberate as paper. */
+  --color-panel: #081019;
+  --color-panel-raised: #0c1a26;
+  --color-panel-ink: #f2f0e9;
+  --color-panel-muted: #9aa7ae;
+
+  /* Focus ring color chosen to clear ~3:1 non-text contrast on BOTH paper
+     and panel surfaces, since focusable elements live on both. */
+  --color-focus: #0e8a7e;
+
+  --color-reassurance: #eaf3f0;
+  --color-reassurance-border: #bcd8d0;
 }
 
 html {
@@ -52,7 +66,7 @@ body {
 
 /* Visible focus states everywhere, because full keyboard navigation is not optional. */
 :focus-visible {
-  outline: 3px solid var(--color-brand);
+  outline: 3px solid var(--color-focus);
   outline-offset: 2px;
   border-radius: 2px;
 }

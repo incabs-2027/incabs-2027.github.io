@@ -1,35 +1,23 @@
 import Link from "next/link";
 import type { Track } from "@/lib/conference";
 
-const trackColor: Record<Track["id"], string> = {
-  T1: "var(--color-track-1)",
-  T2: "var(--color-track-2)",
-  T3: "var(--color-track-3)",
-  T4: "var(--color-track-4)",
-};
-
 type TrackCardProps = {
   track: Track;
   compact?: boolean;
 };
 
 export function TrackCard({ track, compact = false }: TrackCardProps) {
-  const color = trackColor[track.id];
-
   return (
     <article
       id={track.id}
       aria-labelledby={`${track.id}-title`}
-      className="rounded-lg border-l-4 bg-[var(--color-paper)] p-5 shadow-sm"
-      style={{ borderLeftColor: color }}
+      className="rounded-lg border border-[var(--color-border)] bg-[var(--color-paper)] p-5 sm:p-6"
     >
-      <span
-        className="mb-2 inline-block rounded px-2 py-0.5 text-xs font-bold tracking-wide text-white"
-        style={{ backgroundColor: color }}
-      >
-        {track.id}
-      </span>
-      <h3 id={`${track.id}-title`} className="mb-2 text-lg font-bold tracking-tight">
+      <p className="mb-3 flex items-center gap-3 font-mono text-xs font-bold tracking-wide text-[var(--color-brand)]">
+        TRACK {track.id}
+        <span aria-hidden="true" className="h-px flex-1 bg-[var(--color-border)]" />
+      </p>
+      <h3 id={`${track.id}-title`} className="mb-2 text-lg font-bold tracking-tight text-balance">
         {track.title}
       </h3>
       {compact ? (
@@ -39,7 +27,7 @@ export function TrackCard({ track, compact = false }: TrackCardProps) {
           </p>
           <Link
             href={`/tracks#${track.id}`}
-            className="font-semibold text-[var(--color-brand)] underline underline-offset-2"
+            className="font-semibold text-[var(--color-gold-ink)] underline underline-offset-2"
           >
             See topics →
           </Link>
@@ -51,7 +39,7 @@ export function TrackCard({ track, compact = false }: TrackCardProps) {
             {track.topics.map((topic) => (
               <li
                 key={topic}
-                className="rounded-full bg-[var(--color-paper-raised)] px-3 py-1 text-sm text-[var(--color-ink-muted)]"
+                className="rounded border border-[var(--color-border)] px-2.5 py-1 text-xs font-medium text-[var(--color-ink-muted)]"
               >
                 {topic}
               </li>

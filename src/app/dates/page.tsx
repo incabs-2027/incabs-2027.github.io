@@ -36,7 +36,7 @@ export default function DatesPage() {
           <li key={step.label} className="flex items-center gap-2">
             <Link
               href={step.href}
-              className="rounded-full border border-[var(--color-border)] bg-[var(--color-paper-raised)] px-4 py-1.5 text-sm font-semibold text-[var(--color-brand)] shadow-sm hover:border-[var(--color-brand)]"
+              className="rounded border border-[var(--color-border)] bg-[var(--color-paper-raised)] px-4 py-1.5 font-mono text-sm font-semibold text-[var(--color-brand)] hover:border-[var(--color-brand)]"
             >
               {step.label}
             </Link>
