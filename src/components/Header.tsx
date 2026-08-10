@@ -6,7 +6,7 @@ import { Nav } from "./Nav";
 export function Header() {
   return (
     <header className="border-b-4 border-[var(--color-gold)] bg-[var(--color-panel)]">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-4 py-3 sm:px-6 3xl:max-w-7xl">
+      <div className="flex items-center justify-between gap-6 px-4 py-3 sm:px-6 lg:px-10 xl:px-16">
         <Link href="/" className="flex items-center gap-3">
           <span className="flex items-center justify-center rounded-lg bg-[var(--color-paper)] p-1.5 shadow-sm">
             <Image

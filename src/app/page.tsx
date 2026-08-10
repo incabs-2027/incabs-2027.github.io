@@ -61,7 +61,7 @@ export default function Home() {
           </g>
         </svg>
 
-        <div className="relative mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-24 2xl:max-w-6xl 3xl:max-w-7xl">
+        <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:px-10 xl:px-16">
           <p className="mb-4 font-mono text-xs font-bold uppercase tracking-[0.14em] text-[var(--color-accent)]">
             // {conference.hostOrg.acronym} presents
           </p>
@@ -95,7 +95,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-14 2xl:max-w-6xl 3xl:max-w-7xl">
+      <div className="px-4 py-10 sm:px-6 sm:py-14 lg:px-10 xl:px-16">
         <section className="mb-14">
           <h2 className="mb-4 text-2xl font-extrabold tracking-tight">
             What this is
@@ -119,7 +119,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="mb-14 rounded-lg border border-[var(--color-border)] bg-[var(--color-paper-raised)] p-5 sm:p-6">
+        <section className="mb-14 max-w-4xl rounded-lg border border-[var(--color-border)] bg-[var(--color-paper-raised)] p-5 sm:p-6">
           <h2 className="mb-5 text-xl font-extrabold tracking-tight">
             Key details
           </h2>
@@ -166,21 +166,23 @@ export default function Home() {
             Explore {conference.theme.title} by picking the track closest
             to your work, or read all four if you&apos;re not sure yet.
           </p>
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {conference.tracks.map((track) => (
               <TrackCard key={track.id} track={track} compact />
             ))}
           </div>
         </section>
 
-        <Callout variant="reassurance" title="Never submitted a research paper before?">
-          <p>
-            You&apos;re exactly who this conference is for. Lab and professor requirement is not mandatory. Read the{" "}
-            <Link href="/faq">frequently asked questions</Link> for honest
-            answers to the questions most first-time student researchers
-            have.
-          </p>
-        </Callout>
+        <div className="max-w-2xl">
+          <Callout variant="reassurance" title="Never submitted a research paper before?">
+            <p>
+              You&apos;re exactly who this conference is for. Lab and professor requirement is not mandatory. Read the{" "}
+              <Link href="/faq">frequently asked questions</Link> for honest
+              answers to the questions most first-time student researchers
+              have.
+            </p>
+          </Callout>
+        </div>
       </div>
     </>
   );

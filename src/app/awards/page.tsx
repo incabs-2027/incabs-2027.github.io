@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function AwardsPage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-14 3xl:max-w-4xl">
+    <div className="max-w-3xl px-4 py-10 sm:px-6 sm:py-14 lg:px-10 xl:px-16 3xl:max-w-4xl">
       <h1 className="mb-6 text-4xl font-extrabold tracking-tight">Awards</h1>
 
       <div className="prose prose-neutral mb-8 max-w-none">
