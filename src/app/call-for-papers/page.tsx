@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { conference } from "@/lib/conference";
 import { TrackCard } from "@/components/TrackCard";
+import { EligibilityCheck } from "@/components/EligibilityCheck";
 import CfpContent from "@/content/2027/cfp.mdx";
 
 export const metadata: Metadata = {
@@ -37,6 +38,10 @@ export default function CallForPapersPage() {
         {conference.tracks.map((track) => (
           <TrackCard key={track.id} track={track} compact />
         ))}
+      </div>
+
+      <div className="mt-10">
+        <EligibilityCheck />
       </div>
 
       <h2 className="mb-4 mt-10 text-2xl font-extrabold tracking-tight">

@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { conference } from "@/lib/conference";
 import { Callout } from "@/components/Callout";
+import { SubmissionChecklist } from "@/components/SubmissionChecklist";
 
 export const metadata: Metadata = {
   title: `Submission | ${conference.acronym} ${conference.year}`,
@@ -32,6 +33,9 @@ export default function SubmissionPage() {
           </Link>
           .
         </p>
+        <div className="mt-6">
+          <SubmissionChecklist />
+        </div>
       </section>
 
       <section id="format" className="mb-10 scroll-mt-20">
