@@ -12,12 +12,34 @@ export const metadata: Metadata = {
 
 export default function TracksPage() {
   return (
-    <div className="max-w-4xl px-4 py-10 sm:px-6 sm:py-14 lg:px-10 xl:px-16 3xl:max-w-5xl">
+    <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6 sm:py-14 lg:px-10 xl:px-16 3xl:max-w-5xl">
       <h1 className="mb-6 text-4xl font-extrabold tracking-tight">Conference Tracks</h1>
 
-      <div className="prose prose-neutral mb-8 max-w-none">
+      <div className="prose prose-neutral mb-6 max-w-none">
         <TracksContent />
       </div>
+
+      <nav aria-label="Jump to a track" className="mb-10 flex flex-wrap gap-2">
+        {conference.tracks.map((track) => (
+          <a
+            key={track.id}
+            href={`#${track.id}`}
+            className="rounded-full border border-[var(--color-border)] bg-[var(--color-paper-raised)] px-3.5 py-1.5 text-sm font-semibold text-[var(--color-brand)] hover:border-[var(--color-brand)]"
+          >
+            {track.id} · {track.title.split(/,| and /)[0]}
+          </a>
+        ))}
+      </nav>
+
+      <TrackRecommender />
+
+      <h2 className="mb-2 mt-12 text-2xl font-extrabold tracking-tight">
+        Or browse all four tracks
+      </h2>
+      <p className="mb-6 max-w-2xl text-[var(--color-ink-muted)]">
+        Want to compare them yourself, or double-check what the tool told
+        you? Here&apos;s the full picture.
+      </p>
 
       <div className="grid gap-5 sm:grid-cols-2">
         {conference.tracks.map((track) => (
@@ -25,16 +47,12 @@ export default function TracksPage() {
         ))}
       </div>
 
-      <div className="mt-10">
-        <TrackRecommender />
-      </div>
-
       <div className="mt-6">
         <Callout variant="reassurance">
           <p>
-            Not sure which track fits your project? Pick whichever one your
-            work leans on most. Reviewers judge substance, not the label.
-            More questions like this are answered on the{" "}
+            Still not sure which track fits your project? Pick whichever one
+            your work leans on most. Reviewers judge substance, not the
+            label. More questions like this are answered on the{" "}
             <Link href="/faq">FAQ page</Link>.
           </p>
         </Callout>

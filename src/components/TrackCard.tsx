@@ -11,10 +11,18 @@ export function TrackCard({ track, compact = false }: TrackCardProps) {
     <article
       id={track.id}
       aria-labelledby={`${track.id}-title`}
-      className="rounded-lg border border-[var(--color-border)] bg-[var(--color-paper)] p-5 sm:p-6"
+      className="scroll-mt-24 rounded-lg border border-[var(--color-border)] bg-[var(--color-paper)] p-5 transition-shadow hover:shadow-md sm:p-6"
     >
-      <p className="mb-3 flex items-center gap-3 font-mono text-xs font-bold tracking-wide text-[var(--color-brand)]">
-        TRACK {track.id}
+      <p className="mb-3 flex items-center gap-2.5">
+        <span
+          aria-hidden="true"
+          className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[var(--color-brand)] font-mono text-xs font-bold text-white"
+        >
+          {track.id.slice(1)}
+        </span>
+        <span className="font-mono text-xs font-bold tracking-wide text-[var(--color-brand)]">
+          TRACK {track.id}
+        </span>
         <span aria-hidden="true" className="h-px flex-1 bg-[var(--color-border)]" />
       </p>
       <h3 id={`${track.id}-title`} className="mb-2 text-lg font-bold tracking-tight text-balance">
@@ -35,11 +43,14 @@ export function TrackCard({ track, compact = false }: TrackCardProps) {
       ) : (
         <>
           <p className="mb-4 text-[var(--color-ink-muted)]">{track.summary}</p>
+          <p className="mb-2 font-mono text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
+            Topics this track covers
+          </p>
           <ul className="flex flex-wrap gap-2">
             {track.topics.map((topic) => (
               <li
                 key={topic}
-                className="rounded border border-[var(--color-border)] px-2.5 py-1 text-xs font-medium text-[var(--color-ink-muted)]"
+                className="rounded-full border border-[var(--color-border)] bg-[var(--color-paper-raised)] px-3 py-1 text-xs font-medium text-[var(--color-ink-muted)]"
               >
                 {topic}
               </li>
