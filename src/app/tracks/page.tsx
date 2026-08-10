@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { conference } from "@/lib/conference";
 import { TrackCard } from "@/components/TrackCard";
+import { TrackRecommender } from "@/components/TrackRecommender";
 import { Callout } from "@/components/Callout";
 import TracksContent from "@/content/2027/tracks.mdx";
 
@@ -25,6 +26,10 @@ export default function TracksPage() {
       </div>
 
       <div className="mt-10">
+        <TrackRecommender />
+      </div>
+
+      <div className="mt-6">
         <Callout variant="reassurance">
           <p>
             Not sure which track fits your project? Pick whichever one your
