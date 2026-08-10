@@ -36,7 +36,7 @@ export default function CallForPapersPage() {
       </h2>
       <div className="grid gap-4 sm:grid-cols-2">
         {conference.tracks.map((track) => (
-          <TrackCard key={track.id} track={track} compact />
+          <TrackCard key={track.id} track={track} />
         ))}
       </div>
 

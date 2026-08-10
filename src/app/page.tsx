@@ -168,7 +168,7 @@ export default function Home() {
           </p>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {conference.tracks.map((track) => (
-              <TrackCard key={track.id} track={track} compact />
+              <TrackCard key={track.id} track={track} />
             ))}
           </div>
         </section>

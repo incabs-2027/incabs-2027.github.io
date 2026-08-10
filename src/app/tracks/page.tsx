@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { conference } from "@/lib/conference";
-import { TrackCard } from "@/components/TrackCard";
+import { TrackRow } from "@/components/TrackRow";
 import { TrackRecommender } from "@/components/TrackRecommender";
 import { Callout } from "@/components/Callout";
 import TracksContent from "@/content/2027/tracks.mdx";
@@ -41,9 +41,9 @@ export default function TracksPage() {
         you? Here&apos;s the full picture.
       </p>
 
-      <div className="grid gap-5 sm:grid-cols-2">
-        {conference.tracks.map((track) => (
-          <TrackCard key={track.id} track={track} />
+      <div className="border-t border-[var(--color-border)]">
+        {conference.tracks.map((track, index) => (
+          <TrackRow key={track.id} track={track} index={index} />
         ))}
       </div>
 
