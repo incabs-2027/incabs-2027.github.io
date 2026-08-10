@@ -38,17 +38,44 @@ export function SubmissionChecklist() {
         {items.length} so far — nothing here is saved or sent anywhere.
       </p>
 
-      <ul className="mb-4 space-y-2">
+      <ul className="mb-4 space-y-2.5">
         {items.map((item, index) => (
           <li key={item}>
-            <label className="flex cursor-pointer items-start gap-2.5 text-sm">
+            <label className="flex cursor-pointer items-start gap-3 text-sm">
               <input
                 type="checkbox"
                 checked={checked[index]}
                 onChange={() => toggle(index)}
-                className="mt-0.5"
+                className="peer sr-only"
               />
-              <span className={checked[index] ? "text-[var(--color-ink-muted)] line-through" : undefined}>
+              <span
+                aria-hidden="true"
+                className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border-2 transition-colors peer-focus-visible:outline peer-focus-visible:outline-3 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-[var(--color-focus)] ${
+                  checked[index]
+                    ? "border-[var(--color-brand)] bg-[var(--color-brand)]"
+                    : "border-[var(--color-border)] bg-[var(--color-paper)]"
+                }`}
+              >
+                {checked[index] && (
+                  <svg viewBox="0 0 16 16" className="h-3 w-3">
+                    <path
+                      d="M3 8.5l3.2 3.2L13 4.5"
+                      fill="none"
+                      stroke="white"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                )}
+              </span>
+              <span
+                className={
+                  checked[index]
+                    ? "pt-0.5 text-[var(--color-ink-muted)] line-through"
+                    : "pt-0.5"
+                }
+              >
                 {item}
               </span>
             </label>
