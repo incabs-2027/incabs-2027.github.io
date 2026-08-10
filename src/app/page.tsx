@@ -44,12 +44,12 @@ export default function Home() {
             who&apos;ll shape it next.
           </h1>
           <p className="mt-5 max-w-2xl text-lg font-semibold text-[var(--color-panel-ink)]">
-            {conference.acronym} {conference.year} — {conference.name}
+            {conference.acronym} {conference.year}, {conference.name}
           </p>
           <p className="mt-3 max-w-2xl text-[var(--color-panel-muted)]">
             A student research conference for high school researchers
             worldwide. Submit original work, get real peer review, and
-            present alongside researchers from other countries.
+            present alongside researchers from all over the world.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
@@ -78,13 +78,13 @@ export default function Home() {
               {conference.acronym} is an annual international conference
               dedicated to showcasing outstanding research conducted by high
               school students from around the world. It&apos;s a rigorous
-              academic forum — not a science fair — where young researchers
+              academic forum, not a science fair, where young researchers
               submit original work, get real peer feedback from a Technical
               Program Committee, and present alongside students from other
               countries.
             </p>
             <p>
-              This is the inaugural edition: the first {conference.acronym},
+              This is the inaugural edition, the first {conference.acronym},
               run by a brand-new foundation, {conference.hostOrg.name}. We
               are building the process in the open, and we would rather tell
               you honestly what is still being decided than guess.
@@ -134,8 +134,8 @@ export default function Home() {
             Four research tracks
           </h2>
           <p className="mb-6 max-w-2xl text-[var(--color-ink-muted)]">
-            {conference.theme.title} — pick the track closest to your work,
-            or read all four if you&apos;re not sure yet.
+            Explore {conference.theme.title} by picking the track closest
+            to your work, or read all four if you&apos;re not sure yet.
           </p>
           <div className="grid gap-4 sm:grid-cols-2">
             {conference.tracks.map((track) => (
@@ -147,7 +147,7 @@ export default function Home() {
         <Callout variant="reassurance" title="Never submitted a research paper before?">
           <p>
             You&apos;re exactly who this conference is for. No lab and no
-            professor required — read the{" "}
+            professor required. Read the{" "}
             <Link href="/faq">frequently asked questions</Link> for honest
             answers to the questions most first-time student researchers
             have.

@@ -4,7 +4,7 @@ import { conference } from "@/lib/conference";
 import { Callout } from "@/components/Callout";
 
 export const metadata: Metadata = {
-  title: `Submission — ${conference.acronym} ${conference.year}`,
+  title: `Submission | ${conference.acronym} ${conference.year}`,
 };
 
 export default function SubmissionPage() {
@@ -77,8 +77,9 @@ export default function SubmissionPage() {
           </div>
           <p className="mt-2 text-sm text-[var(--color-ink-muted)]">
             Roughly what a two-column page in the template above looks
-            like: a title, an author list, and two columns of body text.{" "}
-            {req.maxPages} of these pages is your full paper, {req.pageScopeNote}.
+            like. It has a title, an author list, and two columns of body
+            text. {req.maxPages} of these pages is your full paper,
+            {" "}{req.pageScopeNote}.
           </p>
         </div>
       </section>

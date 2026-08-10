@@ -2,7 +2,7 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  /* System sans only — zero font bytes downloaded. One confident weight-driven
+  /* System sans only, zero font bytes downloaded. One confident weight-driven
      typeface does the work a second face would otherwise do. */
   --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
@@ -13,21 +13,21 @@
   --color-ink-muted: #5b6270;
   --color-border: #e2e5ea;
 
-  /* Deep emerald — text-safe (~5.5:1 on paper). Links, nav, borders, body-safe CTAs. */
+  /* Deep emerald, text-safe (~5.5:1 on paper). Links, nav, borders, body-safe CTAs. */
   --color-brand: #0b7857;
   --color-brand-dark: #08573f;
 
-  /* Bright emerald — the one bold color move. Fills and dark-panel highlights
+  /* Bright emerald, the one bold color move. Fills and dark-panel highlights
      ONLY; ~2.5:1 on white, so it is never used as running text on paper. Pair
      fills with --color-ink text, never white. */
   --color-accent: #17b890;
 
-  /* The one dark "moment" — a full-bleed panel, used exactly once (home hero). */
+  /* The one dark "moment," a full-bleed panel used exactly once (home hero). */
   --color-panel: #0b0e14;
   --color-panel-ink: #f2f4f7;
   --color-panel-muted: #b7bdc9;
 
-  /* Track wayfinding colors — badge fills (white text) and card border stripes
+  /* Track wayfinding colors, used as badge fills (white text) and card border stripes
      only, never running body-text color. */
   --color-track-1: #0b7857; /* T1 healthcare */
   --color-track-2: #8b2fa0; /* T2 genomics / drug discovery */
@@ -50,7 +50,7 @@ body {
   line-height: 1.6; /* helps readers who aren't reading in their first language */
 }
 
-/* Visible focus states everywhere — full keyboard navigation is not optional. */
+/* Visible focus states everywhere, because full keyboard navigation is not optional. */
 :focus-visible {
   outline: 3px solid var(--color-brand);
   outline-offset: 2px;

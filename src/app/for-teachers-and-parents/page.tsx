@@ -5,7 +5,7 @@ import { TBA } from "@/components/TBA";
 import { Callout } from "@/components/Callout";
 
 export const metadata: Metadata = {
-  title: `For Teachers & Parents — ${conference.acronym} ${conference.year}`,
+  title: `For Teachers & Parents | ${conference.acronym} ${conference.year}`,
 };
 
 export default function ForTeachersAndParentsPage() {
@@ -17,7 +17,7 @@ export default function ForTeachersAndParentsPage() {
 
       <p className="mb-8 max-w-2xl">
         A student wants to submit a paper here, and you&apos;re doing the
-        sensible thing: checking whether this is real before they invest
+        sensible thing, checking whether this is real before they invest
         time in it. Here&apos;s a direct answer to that.
       </p>
 
@@ -31,29 +31,30 @@ export default function ForTeachersAndParentsPage() {
         {conference.committee[0].affiliation
           ? `, ${conference.committee[0].affiliation}`
           : ""}
-        . This is the inaugural edition — the first time this conference has
-        run — organized by a newly formed foundation. We think that&apos;s
-        worth saying plainly rather than dressing it up.
+        . This is the inaugural edition, the first time this conference has
+        run, and it is organized by a newly formed foundation. We think
+        that&apos;s worth saying plainly rather than dressing it up.
       </p>
 
       <h2 className="mb-3 text-2xl font-extrabold tracking-tight">
         How to check this is legitimate
       </h2>
       <p className="mb-3">
-        Submitted papers go through independent peer review — roughly{" "}
-        {conference.reviewProcess.reviewersPerPaper} reviewers per paper —
+        Submitted papers go through independent peer review, roughly{" "}
+        {conference.reviewProcess.reviewersPerPaper} reviewers per paper,
         before acceptance. That review process, and everything else about
         submitting, is documented publicly on the{" "}
         <Link href="/submission" className="text-[var(--color-brand)] underline underline-offset-2">
           Submission
         </Link>{" "}
         page rather than handled privately. Formatting follows the ACM SIG
-        Proceedings format — {conference.paperRequirements.acmDisclaimer}
+        Proceedings format. {conference.paperRequirements.acmDisclaimer}
       </p>
       <p className="mb-8">
-        Every unresolved detail on this site — dates, format, fees — is
-        marked &ldquo;To be announced&rdquo; rather than guessed at. That is
-        deliberate: inventing details to look more finished would be a red
+        Every unresolved detail on this site, including dates, format, and
+        fees, is marked &ldquo;To be announced&rdquo; rather than guessed
+        at. That is
+        deliberate. Inventing details to look more finished would be a red
         flag, not a reassurance.
       </p>
 
@@ -62,8 +63,8 @@ export default function ForTeachersAndParentsPage() {
         Registration fee: <TBA value={conference.registration.feeAmount} label="Registration fee" />
       </p>
       <p className="mb-8">
-        No fee has been announced, and none will be collected until one is —
-        this site does not carry payment links or fee tables until that
+        No fee has been announced, and none will be collected until one is.
+        This site does not carry payment links or fee tables until that
         decision is made and published here first.
       </p>
 
@@ -71,8 +72,8 @@ export default function ForTeachersAndParentsPage() {
         What participation involves
       </h2>
       <p className="mb-8">
-        A student submits a paper, it goes through peer review, they receive
-        a decision, and — if accepted — they revise, register, and present.
+        A student submits a paper, it goes through peer review, and they
+        receive a decision. If accepted, they revise, register, and present.
         The full timeline, once dates are set, will be on the{" "}
         <Link href="/dates" className="text-[var(--color-brand)] underline underline-offset-2">
           Key Dates
@@ -83,14 +84,14 @@ export default function ForTeachersAndParentsPage() {
       <h2 className="mb-3 text-2xl font-extrabold tracking-tight">Student data</h2>
       <Callout variant="reassurance">
         <p className="mb-2">
-          This website itself collects no personal information: there are
+          This website itself collects no personal information. There are
           no forms, no accounts, and no analytics on it.
         </p>
         <p>
           Paper submission will happen through a separate external platform
           (still being decided) that will carry its own privacy policy. We
-          are not in a position to make promises about that platform here —
-          when it is chosen, this page will link to it and to its policy.
+          are not in a position to make promises about that platform here.
+          When it is chosen, this page will link to it and to its policy.
         </p>
       </Callout>
     </div>

@@ -5,7 +5,7 @@ import { Footer } from "@/components/Footer";
 import { conference } from "@/lib/conference";
 
 export const metadata: Metadata = {
-  title: `${conference.acronym} ${conference.year} — ${conference.name}`,
+  title: `${conference.acronym} ${conference.year} | ${conference.name}`,
   description: `${conference.name}, hosted by ${conference.hostOrg.name}. An academic research conference for high school students worldwide.`,
 };
 

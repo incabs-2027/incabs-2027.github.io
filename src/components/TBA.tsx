@@ -1,6 +1,6 @@
 // The single place "To be announced" exists in the codebase. Every unresolved
 // fact on the site renders through here, driven directly by a nullable value
-// from lib/conference.ts — never a hardcoded placeholder string elsewhere.
+// from lib/conference.ts, never a hardcoded placeholder string elsewhere.
 
 type TBAProps = {
   value: string | null | undefined;

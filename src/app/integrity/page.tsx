@@ -4,7 +4,7 @@ import { Callout } from "@/components/Callout";
 import IntegrityContent from "@/content/2027/integrity.mdx";
 
 export const metadata: Metadata = {
-  title: `Academic Integrity & Eligibility — ${conference.acronym} ${conference.year}`,
+  title: `Academic Integrity & Eligibility | ${conference.acronym} ${conference.year}`,
 };
 
 export default function IntegrityPage() {
@@ -30,7 +30,7 @@ export default function IntegrityPage() {
 
       <Callout variant="reassurance">
         <p>
-          This isn&apos;t about excluding anyone — it&apos;s about your
+          This isn&apos;t about excluding anyone. It&apos;s about your
           school being one your own country already recognizes as a school.
           If you&apos;re homeschooled and your country recognizes
           homeschooling, you&apos;re covered.

@@ -3,7 +3,7 @@ import { conference } from "@/lib/conference";
 import { TBA } from "@/components/TBA";
 
 export const metadata: Metadata = {
-  title: `Committee — ${conference.acronym} ${conference.year}`,
+  title: `Committee | ${conference.acronym} ${conference.year}`,
 };
 
 export default function CommitteePage() {
@@ -29,8 +29,8 @@ export default function CommitteePage() {
       </div>
 
       <p className="mb-4">
-        The Technical Program Committee — the group of reviewers who
-        evaluate submitted papers — is still being formed. Each paper is
+        The Technical Program Committee, the group of reviewers who
+        evaluate submitted papers, is still being formed. Each paper is
         reviewed by approximately {conference.reviewProcess.reviewersPerPaper}{" "}
         independent reviewers with expertise relevant to its track.
       </p>

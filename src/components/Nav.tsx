@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 
-// Navigation labels are UI copy, not conference facts — they live here
+// Navigation labels are UI copy, not conference facts, so they live here
 // rather than in lib/conference.ts.
 const links = [
   { href: "/call-for-papers", label: "Call for Papers" },

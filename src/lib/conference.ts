@@ -1,6 +1,6 @@
 // Single source of truth for every conference fact used across the site.
 // Every value here traces to references/inCABS call for paper.docx.
-// Unknown values are `null` — never an empty string, never a placeholder
+// Unknown values are `null`, never an empty string, never a placeholder
 // value intended to be replaced later. `null` is what makes `<TBA />` fire.
 
 export type TrackId = "T1" | "T2" | "T3" | "T4";
@@ -72,7 +72,7 @@ export type ConferenceData = {
   };
 
   // Unresolved facts (blocked on the General Chair). null is the only valid
-  // "unknown" state — every one of these renders through <TBA />.
+  // "unknown" state. Every one of these renders through <TBA />.
   dates: {
     submissionDeadline: string | null;
     notificationDate: string | null;
@@ -220,7 +220,7 @@ export const conference: ConferenceData = {
   presentation: {
     formats: ["Oral Presentation", "Poster Presentation"],
     cameraReadyNote:
-      "Authors of accepted papers will be required to submit a final version — the camera-ready version — incorporating reviewer feedback, where applicable.",
+      "Authors of accepted papers will be required to submit a final version, called the camera-ready version, incorporating reviewer feedback, where applicable.",
     registrationRequirement:
       "At least one author of every accepted paper must register for the conference by the Author Registration Deadline and present the paper during the conference. Papers without a registered presenting author may be removed from the conference program and may not be included in the official conference proceedings.",
     publicationStatement:

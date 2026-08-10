@@ -5,17 +5,17 @@ import { TrackCard } from "@/components/TrackCard";
 import CfpContent from "@/content/2027/cfp.mdx";
 
 export const metadata: Metadata = {
-  title: `Call for Papers — ${conference.acronym} ${conference.year}`,
+  title: `Call for Papers | ${conference.acronym} ${conference.year}`,
 };
 
 const sectionGlosses: Record<string, string> = {
   "research motivation": "why this problem matters, and why you chose to study it",
-  methodology: "how you actually did the research — your approach, tools, and data",
+  methodology: "how you actually did the research, including your approach, tools, and data",
   "results (where applicable)":
-    "what you found; it's fine if this is short, exploratory, or inconclusive",
+    "what you found, and it's fine if this is short, exploratory, or inconclusive",
   discussion: "what your results mean, in context",
   limitations:
-    "what your research couldn't answer — a normal, expected part of real science, not a weakness",
+    "what your research couldn't answer, which is a normal, expected part of real science, not a weakness",
   conclusions: "your main takeaway, in a sentence or two",
 };
 
@@ -56,14 +56,15 @@ export default function CallForPapersPage() {
       </ul>
 
       <p className="mb-3">
-        Your paper should clearly describe each of the following — the
-        review process (see <Link href="/submission">Submission</Link>)
-        expects all six:
+        Your paper should clearly describe each of the following six
+        sections. The review process, explained on the{" "}
+        <Link href="/submission">Submission</Link> page, expects all of
+        them.
       </p>
       <ul className="mb-8 space-y-2">
         {req.requiredSections.map((section) => (
           <li key={section}>
-            <span className="font-semibold capitalize">{section}</span> —{" "}
+            <span className="font-semibold capitalize">{section}</span>,{" "}
             {sectionGlosses[section]}
           </li>
         ))}

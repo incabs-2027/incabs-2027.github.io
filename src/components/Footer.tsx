@@ -1,15 +1,22 @@
 import Link from "next/link";
+import Image from "next/image";
 import { conference } from "@/lib/conference";
 
 export function Footer() {
   return (
     <footer className="mt-16 border-t border-[var(--color-border)] bg-[var(--color-paper-raised)]">
       <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
-        <Link
-          href="/gyst-ai/conferences"
-          className="text-base font-bold tracking-tight text-[var(--color-brand)] underline underline-offset-2"
-        >
-          Hosted by {conference.hostOrg.name} ({conference.hostOrg.acronym})
+        <Link href="/gyst-ai/conferences" className="flex items-center gap-3">
+          <Image
+            src="/images/gystai-logo.png"
+            alt={`${conference.hostOrg.name} logo`}
+            width={320}
+            height={268}
+            className="h-10 w-auto"
+          />
+          <span className="text-base font-bold tracking-tight text-[var(--color-brand)] underline underline-offset-2">
+            Hosted by {conference.hostOrg.name} ({conference.hostOrg.acronym})
+          </span>
         </Link>
         <p className="mt-1 text-sm text-[var(--color-ink-muted)]">
           {conference.hostOrg.tagline}

@@ -4,7 +4,7 @@ import { conference } from "@/lib/conference";
 import { DatesTable } from "@/components/DatesTable";
 
 export const metadata: Metadata = {
-  title: `Key Dates — ${conference.acronym} ${conference.year}`,
+  title: `Key Dates | ${conference.acronym} ${conference.year}`,
 };
 
 const pipeline = [
@@ -22,7 +22,7 @@ export default function DatesPage() {
       <h1 className="mb-4 text-4xl font-extrabold tracking-tight">Key Dates</h1>
       <p className="mb-8 max-w-2xl">
         Nothing on this page is invented. Every date below will be filled in
-        the moment {conference.hostOrg.acronym} confirms it — until then, it
+        the moment {conference.hostOrg.acronym} confirms it. Until then, it
         honestly says &ldquo;To be announced.&rdquo;
       </p>
 

@@ -6,7 +6,7 @@ import { Callout } from "@/components/Callout";
 import TracksContent from "@/content/2027/tracks.mdx";
 
 export const metadata: Metadata = {
-  title: `Tracks — ${conference.acronym} ${conference.year}`,
+  title: `Tracks | ${conference.acronym} ${conference.year}`,
 };
 
 export default function TracksPage() {
@@ -28,7 +28,7 @@ export default function TracksPage() {
         <Callout variant="reassurance">
           <p>
             Not sure which track fits your project? Pick whichever one your
-            work leans on most — reviewers judge substance, not the label.
+            work leans on most. Reviewers judge substance, not the label.
             More questions like this are answered on the{" "}
             <Link href="/faq">FAQ page</Link>.
           </p>

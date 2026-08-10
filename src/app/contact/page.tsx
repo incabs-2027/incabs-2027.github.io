@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { conference } from "@/lib/conference";
 
 export const metadata: Metadata = {
-  title: `Contact — ${conference.acronym} ${conference.year}`,
+  title: `Contact | ${conference.acronym} ${conference.year}`,
 };
 
 export default function ContactPage() {
@@ -25,7 +25,7 @@ export default function ContactPage() {
         >
           For Teachers &amp; Parents
         </Link>{" "}
-        pages — checking there first helps us answer everyone faster.
+        pages. Checking there first helps us answer everyone faster.
       </p>
 
       <div className="space-y-2">

@@ -3,7 +3,7 @@ import { conference } from "@/lib/conference";
 import FaqContent from "@/content/2027/faq.mdx";
 
 export const metadata: Metadata = {
-  title: `FAQ — ${conference.acronym} ${conference.year}`,
+  title: `FAQ | ${conference.acronym} ${conference.year}`,
 };
 
 export default function FaqPage() {

@@ -3,7 +3,7 @@ import { conference } from "@/lib/conference";
 import AwardsContent from "@/content/2027/awards.mdx";
 
 export const metadata: Metadata = {
-  title: `Awards — ${conference.acronym} ${conference.year}`,
+  title: `Awards | ${conference.acronym} ${conference.year}`,
 };
 
 export default function AwardsPage() {
