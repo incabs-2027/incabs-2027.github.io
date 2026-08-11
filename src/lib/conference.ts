@@ -16,6 +16,7 @@ export type CommitteeMember = {
   name: string;
   role: string;
   affiliation: string | null;
+  photoUrl: string | null;
 };
 
 export type ConferenceData = {
@@ -26,6 +27,7 @@ export type ConferenceData = {
     name: string;
     acronym: string;
     tagline: string;
+    contactEmail: string;
   };
   language: string;
   theme: {
@@ -57,6 +59,11 @@ export type ConferenceData = {
   };
   awards: { name: string }[];
   awardsClosingNote: string;
+  submissionPlatform: {
+    name: string;
+    disclaimer: string;
+    conferenceUrl: string | null;
+  };
   academicIntegrity: {
     statement: string;
   };
@@ -74,6 +81,7 @@ export type ConferenceData = {
   // Unresolved facts (blocked on the General Chair). null is the only valid
   // "unknown" state. Every one of these renders through <TBA />.
   dates: {
+    abstractDeadline: string | null;
     submissionDeadline: string | null;
     notificationDate: string | null;
     cameraReadyDeadline: string | null;
@@ -88,6 +96,7 @@ export type ConferenceData = {
   registration: {
     feeAmount: string | null;
     feeNote: string | null;
+    tiers: { name: string; amount: string | null; note: string | null }[];
   };
 };
 
@@ -99,6 +108,7 @@ export const conference: ConferenceData = {
     name: "Global Youth AI & STEM Foundation",
     acronym: "GYST-AI",
     tagline: "Connecting Young Minds with AI and Biomedical Discovery",
+    contactEmail: "gystem.ai@gmail.com",
   },
   language: "English",
   theme: {
@@ -234,6 +244,12 @@ export const conference: ConferenceData = {
     { name: "Outstanding Interdisciplinary Research Award" },
   ],
   awardsClosingNote: "The Organizing Committee may announce additional awards.",
+  submissionPlatform: {
+    name: "Microsoft CMT",
+    disclaimer:
+      "The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.",
+    conferenceUrl: null,
+  },
   academicIntegrity: {
     statement:
       "Authors certify that submitted work represents their own original research and that all sources, data, software, and collaborative contributions have been appropriately acknowledged. The conference maintains a strict policy regarding plagiarism, fabrication, falsification, duplicate submission, and other forms of academic misconduct. Violations may result in rejection or withdrawal of submissions.",
@@ -247,17 +263,25 @@ export const conference: ConferenceData = {
   },
   committee: [
     {
-      name: "Dr. Xiong",
-      role: "General Chair and Program Chair",
-      affiliation: null,
+      name: "Chenlyvia Xiong",
+      role: "Founding General Chair, Program Chair & Founding GYST-AI President",
+      affiliation: "Ronald Reagan High School, San Antonio, Texas",
+      photoUrl: null,
+    },
+    {
+      name: "Zimo Wen",
+      role: "Program Secretary, GYST-AI Secretary",
+      affiliation: "Williamsville East High School, Buffalo, New York",
+      photoUrl: null,
     },
   ],
   committeeClosingNote: "Additional committee members will be announced.",
   contact: {
-    emails: ["incabs2027@gmail.com", "gystem.ai@gmail.com"],
+    emails: ["incabs2027@gmail.com"],
   },
 
   dates: {
+    abstractDeadline: null,
     submissionDeadline: null,
     notificationDate: null,
     cameraReadyDeadline: null,
@@ -272,5 +296,10 @@ export const conference: ConferenceData = {
   registration: {
     feeAmount: null,
     feeNote: null,
+    tiers: [
+      { name: "Early Registration", amount: null, note: null },
+      { name: "Author Registration", amount: null, note: null },
+      { name: "Regular Registration", amount: null, note: null },
+    ],
   },
 };

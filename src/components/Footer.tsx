@@ -39,7 +39,7 @@ export function Footer() {
           </Link>
         </div>
 
-        <div className="mt-4 flex flex-wrap gap-x-6 gap-y-1 font-mono text-sm text-[var(--color-panel-muted)]">
+        <div className="mt-4 flex flex-wrap gap-x-6 gap-y-1 font-medium text-sm text-[var(--color-panel-muted)]">
           {conference.contact.emails.map((email) => (
             <a key={email} href={`mailto:${email}`} className="hover:text-[var(--color-accent)]">
               {email}

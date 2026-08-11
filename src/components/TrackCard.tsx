@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Track } from "@/lib/conference";
+import { trackColor } from "@/lib/trackColor";
 
 type TrackCardProps = {
   track: Track;
@@ -11,11 +12,12 @@ export function TrackCard({ track }: TrackCardProps) {
       <p className="mb-3 flex items-center gap-2.5">
         <span
           aria-hidden="true"
-          className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[var(--color-brand)] font-mono text-xs font-bold text-white"
+          className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-bold text-white"
+          style={{ backgroundColor: trackColor(track.id) }}
         >
           {track.id.slice(1)}
         </span>
-        <span className="font-mono text-xs font-bold tracking-wide text-[var(--color-brand)]">
+        <span className="text-xs font-bold tracking-wide text-[var(--color-brand)]">
           TRACK {track.id}
         </span>
         <span aria-hidden="true" className="h-px flex-1 bg-[var(--color-border)]" />

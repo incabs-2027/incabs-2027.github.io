@@ -8,53 +8,59 @@
   --breakpoint-3xl: 120rem;
 
   /* System sans only, zero font bytes downloaded. One confident weight-driven
-     typeface does the work a second face would otherwise do. */
+     typeface does the work a second face would otherwise do — including
+     labels and data that used to run in a monospace face; the audience
+     reads that as "coding font," not "official program." */
   --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
-
-  /* System monospace, also zero bytes. Used only for data-like content —
-     track codes, dates, key-fact labels — never running prose. */
-  --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas,
-    "Liberation Mono", monospace;
 
   /* Warm bone paper, not stark white — reads as a printed program, not a
      template. */
   --color-paper: #fbfaf7;
   --color-paper-raised: #f2f0e9;
-  --color-ink: #12160f;
-  --color-ink-muted: #5c6157;
-  --color-border: #e4e1d5;
+  --color-ink: #0d1b2e;
+  --color-ink-muted: #55637a;
+  --color-border: #dde2e8;
 
-  /* Dark teal, text-safe (~7.2:1 on paper). Links, nav, borders, body-safe CTAs. */
-  --color-brand: #0a5f55;
-  --color-brand-dark: #073f38;
+  /* GYST-AI brand teal, darkened for text-safe contrast (~7:1 on paper).
+     Links, nav, borders, body-safe CTAs. */
+  --color-brand: #026a70;
+  --color-brand-dark: #013f43;
 
-  /* Bright teal, the one bold color move (pulled from the logo mark). Fills
-     and dark-panel highlights ONLY; ~3:1 on paper, so it is never running
-     text there — it IS text-safe on --color-panel (~6.1:1). Pair paper fills
-     with --color-ink text, never white. */
-  --color-accent: #12a394;
+  /* GYST-AI brand teal, exact (#018c93). Fills and dark-panel highlights
+     ONLY; not running text on paper — it IS text-safe on --color-panel.
+     Pair paper fills with --color-ink text, never white. */
+  --color-accent: #018c93;
 
-  /* Gold, the prestige accent — CTAs, awards, dark-panel decoration. Fill
-     only (~2.3:1 on paper). Pair fills with --color-ink text. For gold as
-     running text on paper, use --color-gold-ink instead (~7.3:1). */
-  --color-gold: #c9a24b;
-  --color-gold-ink: #6b4f14;
-  --color-gold-tint: #f2e4c4;
+  /* GYST-AI brand orange (#fe6904), the prestige/CTA accent — replaces the
+     old gold. Fill only. Pair fills with --color-ink text. For orange as
+     running text on paper, use --color-gold-ink instead (dark, ~7:1). */
+  --color-gold: #fe6904;
+  --color-gold-ink: #9a3412;
+  --color-gold-tint: #fde3cf;
 
-  /* Deep navy chrome — header, hero, and footer, not a one-off hero band.
-     This is the site's second "surface," as deliberate as paper. */
-  --color-panel: #081019;
-  --color-panel-raised: #0c1a26;
+  /* Deep brand blue chrome (#004faa family, darkened) — header, hero, and
+     footer, not a one-off hero band. This is the site's second "surface,"
+     as deliberate as paper, and deliberately blue rather than black. */
+  --color-panel: #0a2a52;
+  --color-panel-raised: #123a6b;
   --color-panel-ink: #f2f0e9;
-  --color-panel-muted: #9aa7ae;
+  --color-panel-muted: #a9bdd6;
 
   /* Focus ring color chosen to clear ~3:1 non-text contrast on BOTH paper
      and panel surfaces, since focusable elements live on both. */
-  --color-focus: #0e8a7e;
+  --color-focus: #018c93;
 
-  --color-reassurance: #eaf3f0;
-  --color-reassurance-border: #bcd8d0;
+  --color-reassurance: #e9f4f5;
+  --color-reassurance-border: #b7dde0;
+
+  /* Small, contained use only: the per-track badge circle in TrackCard and
+     TrackRow. The rest of the GYST-AI brand palette (purple, pink), used
+     sparingly rather than as page chrome. */
+  --color-track-1: #004faa;
+  --color-track-2: #018c93;
+  --color-track-3: #5e1ba0;
+  --color-track-4: #d90670;
 }
 
 html {

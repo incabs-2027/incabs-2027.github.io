@@ -43,14 +43,14 @@ export default function DatesPage() {
         )}
       </div>
 
-      <h2 className="mb-5 font-mono text-xs font-bold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
+      <h2 className="mb-5 text-xs font-bold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
         What happens, in order
       </h2>
       <DatesTimeline />
 
       <dl className="mt-4 grid gap-5 rounded-lg border border-[var(--color-border)] bg-[var(--color-paper-raised)] p-5 sm:grid-cols-2 sm:p-6">
         <div className="border-l-2 border-[var(--color-accent)] pl-4">
-          <dt className="font-mono text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
+          <dt className="text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
             Format &amp; location
           </dt>
           <dd className="mt-1.5 font-semibold">
@@ -58,7 +58,7 @@ export default function DatesPage() {
           </dd>
         </div>
         <div className="border-l-2 border-[var(--color-accent)] pl-4">
-          <dt className="font-mono text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
+          <dt className="text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
             Working language
           </dt>
           <dd className="mt-1.5 font-semibold">{conference.language}</dd>

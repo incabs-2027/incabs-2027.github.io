@@ -9,12 +9,14 @@ const primaryLinks = [
   { href: "/tracks", label: "Tracks" },
   { href: "/dates", label: "Dates" },
   { href: "/submission", label: "Submission" },
+  { href: "/registration", label: "Registration" },
   { href: "/committee", label: "Committee" },
 ];
 
 const resourceLinks = [
   { href: "/awards", label: "Awards" },
-  { href: "/integrity", label: "Academic Integrity" },
+  { href: "/integrity", label: "Academic Integrity & Eligibility" },
+  { href: "/travel", label: "Travel & Venue" },
   { href: "/faq", label: "FAQ" },
   { href: "/for-teachers-and-parents", label: "Teachers & Parents" },
 ];
@@ -92,7 +94,7 @@ export function Nav() {
           <Link
             href="/call-for-papers"
             onClick={() => setOpen(false)}
-            className="block rounded-md bg-[var(--color-gold)] px-4 py-2 text-center text-sm font-bold text-[var(--color-ink)] hover:bg-[#dcb567]"
+            className="block rounded-md bg-[var(--color-gold)] px-4 py-2 text-center text-sm font-bold text-[var(--color-ink)] hover:bg-[#ff8a3d]"
           >
             Call for Papers
           </Link>

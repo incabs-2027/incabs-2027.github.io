@@ -1,0 +1,55 @@
+Status of "Website feedback" notes (page 8 of inCABS call for paper draft.docx)
+Checked as of 2026-08-11. Listed in the order they appear in the doc.
+
+[ NOT DONE - blocked, needs new CFP from you ]
+1. Update CFP with new one
+2. Announce important dates on CFP update
+3. Update/change wording sitewide based on new CFP info
+
+[ DONE ]
+4. Home page: added Location field, bigger logo in hero (dates/deadlines
+   were already shown via countdown; still say "To be announced" until
+   real dates exist, per #1)
+5. inCABS logo top-left corner - already there before this pass, unchanged
+6. Use less black and the yellow - full brand color repaint (blue, teal,
+   orange, purple, pink) replacing the old black/gold scheme
+7. FAQ - added 3 new questions (team eligibility across schools/countries,
+   homeschool recognition, registration cost)
+8. Committee name: Dr. Xiong -> Chenlyvia Xiong
+9. Chenlyvia's title: Founding General Chair, Program Chair & Founding
+   GYST-AI President - added, with a placeholder box left for her photo
+10. Chenlyvia's affiliation: Ronald Reagan High School, San Antonio, TX
+11. Contact page: "mostly-volunteer" -> "fully volunteer"; GYST-AI's own
+    gmail moved off the sitewide contact list, now shown only on the
+    GYST-AI page
+12. Academic Integrity tab renamed "Academic Integrity & Eligibility"
+13. Removed the monospace "coding" font look sitewide
+14. "Find your track" tool - no changes needed, you liked it as-is
+15. Key dates: added an Abstract Submission Deadline slot (shows "To be
+    announced" until the new CFP sets a real date, per #1)
+16. Committee: added Zimo Wen, Program Secretary / GYST-AI Secretary
+17. Zimo's affiliation: Williamsville East High School, Buffalo, NY
+18. New Registration page/tab: Early / Author / Regular Registration
+    tiers (prices "To be announced" until fees are decided)
+19. New Travel & Venue page/tab: hotel, travel info (To be announced),
+    visa invitation letter info + the travel.state.gov link you gave,
+    things to do in the host city (To be announced)
+20. Added a "Become a sponsor" button/CTA (Contact page + home page)
+21. Added a "Become a foundation member" button/CTA (Contact page + home
+    page)
+22. Microsoft CMT disclaimer - added prominently, visible on the
+    Submission page
+23. Submission page: added a place for the CMT submission link, shows
+    "To be announced" until the conference is created on CMT
+
+[ NOT DONE - just a note from you, nothing to build ]
+24. "Once I make the conference on CMT, I can finalize the new CFP and
+    send it" - waiting on you, no site change needed yet
+
+[ NOT DONE - blocked, no social accounts exist yet ]
+25. Add Instagram/other socials once they're established
+
+DONE: 20 of 26 items.
+NOT DONE: 6 items - all explicitly blocked on information only you can
+provide (new CFP, real dates, CMT conference creation, social handles),
+or a note with no site action attached.

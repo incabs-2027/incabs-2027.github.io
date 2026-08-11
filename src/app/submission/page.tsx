@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { conference } from "@/lib/conference";
 import { Callout } from "@/components/Callout";
 import { SubmissionChecklist } from "@/components/SubmissionChecklist";
+import { TBA } from "@/components/TBA";
 
 export const metadata: Metadata = {
   title: `Submission | ${conference.acronym} ${conference.year}`,
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
 
 const sections = [
   { id: "requirements", label: "Requirements" },
+  { id: "how-to-submit", label: "How to submit" },
   { id: "format", label: "Format" },
   { id: "review", label: "Review process" },
   { id: "presentation", label: "Presentation & registration" },
@@ -19,6 +21,7 @@ export default function SubmissionPage() {
   const req = conference.paperRequirements;
   const review = conference.reviewProcess;
   const presentation = conference.presentation;
+  const platform = conference.submissionPlatform;
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-14 lg:px-10 xl:px-16 3xl:max-w-4xl">
@@ -60,19 +63,19 @@ export default function SubmissionPage() {
 
         <dl className="mb-6 grid gap-5 rounded-lg border border-[var(--color-border)] bg-[var(--color-paper-raised)] p-5 sm:grid-cols-3 sm:p-6">
           <div className="border-l-2 border-[var(--color-accent)] pl-4">
-            <dt className="font-mono text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
+            <dt className="text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
               Length
             </dt>
             <dd className="mt-1.5 font-semibold">Up to {req.maxPages} pages</dd>
           </div>
           <div className="border-l-2 border-[var(--color-accent)] pl-4">
-            <dt className="font-mono text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
+            <dt className="text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
               Language
             </dt>
             <dd className="mt-1.5 font-semibold">{req.language}</dd>
           </div>
           <div className="border-l-2 border-[var(--color-accent)] pl-4">
-            <dt className="font-mono text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
+            <dt className="text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
               Authors
             </dt>
             <dd className="mt-1.5 font-semibold">
@@ -82,6 +85,33 @@ export default function SubmissionPage() {
         </dl>
 
         <SubmissionChecklist />
+      </section>
+
+      <section id="how-to-submit" className="mb-12 scroll-mt-20">
+        <h2 className="mb-3 text-2xl font-extrabold tracking-tight">
+          How to submit
+        </h2>
+        <p className="mb-5 max-w-2xl">
+          Papers are submitted through {platform.name}.{" "}
+          {platform.conferenceUrl ? (
+            <a
+              href={platform.conferenceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-[var(--color-brand)] underline underline-offset-2"
+            >
+              Submit your paper on {platform.name} →
+            </a>
+          ) : (
+            <>
+              CMT submission link: <TBA value={null} label="CMT submission link" />
+            </>
+          )}
+        </p>
+
+        <Callout variant="disclaimer" title={`${platform.name} disclaimer`}>
+          <p>{platform.disclaimer}</p>
+        </Callout>
       </section>
 
       <section id="format" className="mb-12 scroll-mt-20">
@@ -102,7 +132,7 @@ export default function SubmissionPage() {
             aria-hidden="true"
             className="relative mx-auto w-full max-w-[200px] rounded-lg border border-[var(--color-border)] bg-white p-4 shadow-sm"
           >
-            <span className="absolute -right-3 -top-3 flex h-10 w-10 flex-col items-center justify-center rounded-full bg-[var(--color-accent)] text-center font-mono text-[0.55rem] font-bold leading-tight text-white shadow-sm">
+            <span className="absolute -right-3 -top-3 flex h-10 w-10 flex-col items-center justify-center rounded-full bg-[var(--color-accent)] text-center text-[0.55rem] font-bold leading-tight text-white shadow-sm">
               <span>MAX</span>
               <span>{req.maxPages}P</span>
             </span>
@@ -145,7 +175,7 @@ export default function SubmissionPage() {
         <p className="mb-5 flex max-w-2xl flex-wrap items-start gap-2.5">
           <span
             aria-hidden="true"
-            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--color-brand)] font-mono text-xs font-bold text-white"
+            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--color-brand)] text-xs font-bold text-white"
           >
             {review.reviewersPerPaper}
           </span>

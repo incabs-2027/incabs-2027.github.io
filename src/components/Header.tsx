@@ -22,7 +22,7 @@ export function Header() {
             <span className="block text-lg font-extrabold tracking-tight text-[var(--color-panel-ink)]">
               {conference.acronym} {conference.year}
             </span>
-            <span className="block font-mono text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-gold)]">
+            <span className="block text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-gold)]">
               AI in Biomedical Sciences
             </span>
           </span>

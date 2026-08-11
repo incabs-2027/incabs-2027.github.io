@@ -1,9 +1,11 @@
 import Link from "next/link";
+import Image from "next/image";
 import { conference } from "@/lib/conference";
 import { TBA } from "@/components/TBA";
 import { Countdown } from "@/components/Countdown";
 import { TrackCard } from "@/components/TrackCard";
 import { Callout } from "@/components/Callout";
+import { GetInvolved } from "@/components/GetInvolved";
 
 export default function Home() {
   return (
@@ -62,8 +64,19 @@ export default function Home() {
         </svg>
 
         <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:px-10 xl:px-16">
-          <p className="mb-4 font-mono text-xs font-bold uppercase tracking-[0.14em] text-[var(--color-accent)]">
-            // {conference.hostOrg.acronym} presents
+          <span className="mb-6 inline-flex items-center justify-center rounded-lg bg-[var(--color-paper)] p-2.5 shadow-sm">
+            <Image
+              src="/images/incabs2-logo.png"
+              alt={`${conference.acronym} ${conference.year} logo`}
+              width={299}
+              height={320}
+              priority
+              className="h-16 w-auto sm:h-20"
+            />
+          </span>
+          <p className="mb-4 text-xs font-bold uppercase tracking-[0.14em] text-[var(--color-accent)]">
+            {"// "}
+            {conference.hostOrg.acronym} presents
           </p>
           <h1 className="max-w-3xl text-4xl font-extrabold leading-[1.08] tracking-tight text-balance sm:text-5xl">
             AI in biomedical sciences, from the{" "}
@@ -81,7 +94,7 @@ export default function Home() {
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href="/call-for-papers"
-              className="rounded-md bg-[var(--color-gold)] px-5 py-3 text-sm font-bold text-[var(--color-ink)] hover:bg-[#dcb567]"
+              className="rounded-md bg-[var(--color-gold)] px-5 py-3 text-sm font-bold text-[var(--color-ink)] hover:bg-[#ff8a3d]"
             >
               Read the Call for Papers
             </Link>
@@ -123,9 +136,9 @@ export default function Home() {
           <h2 className="mb-5 text-xl font-extrabold tracking-tight">
             Key details
           </h2>
-          <dl className="grid gap-5 sm:grid-cols-3">
+          <dl className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             <div className="border-l-2 border-[var(--color-accent)] pl-4">
-              <dt className="font-mono text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
+              <dt className="text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
                 Format
               </dt>
               <dd className="mt-1.5 font-semibold">
@@ -133,7 +146,15 @@ export default function Home() {
               </dd>
             </div>
             <div className="border-l-2 border-[var(--color-accent)] pl-4">
-              <dt className="font-mono text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
+              <dt className="text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
+                Location
+              </dt>
+              <dd className="mt-1.5 font-semibold">
+                <TBA value={conference.format.location} label="Location" />
+              </dd>
+            </div>
+            <div className="border-l-2 border-[var(--color-accent)] pl-4">
+              <dt className="text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
                 Submission deadline
               </dt>
               <dd className="mt-1.5">
@@ -144,7 +165,7 @@ export default function Home() {
               </dd>
             </div>
             <div className="border-l-2 border-[var(--color-accent)] pl-4">
-              <dt className="font-mono text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
+              <dt className="text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
                 Working language
               </dt>
               <dd className="mt-1.5 font-semibold">{conference.language}</dd>
@@ -173,7 +194,7 @@ export default function Home() {
           </div>
         </section>
 
-        <div className="max-w-2xl">
+        <div className="mb-14 max-w-2xl">
           <Callout variant="reassurance" title="Never submitted a research paper before?">
             <p>
               You&apos;re exactly who this conference is for. Lab and professor requirement is not mandatory. Read the{" "}
@@ -183,6 +204,17 @@ export default function Home() {
             </p>
           </Callout>
         </div>
+
+        <section className="max-w-3xl">
+          <h2 className="mb-2 text-2xl font-extrabold tracking-tight">
+            Get involved
+          </h2>
+          <p className="mb-6 max-w-2xl text-[var(--color-ink-muted)]">
+            Not submitting a paper? There are other ways to support the
+            inaugural {conference.acronym} {conference.year}.
+          </p>
+          <GetInvolved />
+        </section>
       </div>
     </>
   );

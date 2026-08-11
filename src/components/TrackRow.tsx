@@ -1,4 +1,5 @@
 import type { Track } from "@/lib/conference";
+import { trackColor } from "@/lib/trackColor";
 
 type TrackRowProps = {
   track: Track;
@@ -15,12 +16,13 @@ export function TrackRow({ track, index }: TrackRowProps) {
       <div className="flex items-start gap-3">
         <span
           aria-hidden="true"
-          className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[var(--color-brand)] font-mono text-xs font-bold text-white"
+          className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-xs font-bold text-white"
+          style={{ backgroundColor: trackColor(track.id) }}
         >
           {index + 1}
         </span>
         <div>
-          <p className="mb-1 font-mono text-[0.65rem] font-bold tracking-wide text-[var(--color-brand)]">
+          <p className="mb-1 text-[0.65rem] font-bold tracking-wide text-[var(--color-brand)]">
             TRACK {track.id}
           </p>
           <h3
@@ -34,7 +36,7 @@ export function TrackRow({ track, index }: TrackRowProps) {
 
       <div>
         <p className="mb-3 text-[var(--color-ink-muted)]">{track.summary}</p>
-        <p className="mb-2 font-mono text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
+        <p className="mb-2 text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
           Topics this track covers
         </p>
         <ul className="flex flex-wrap gap-2">

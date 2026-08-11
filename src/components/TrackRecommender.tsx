@@ -50,7 +50,7 @@ export function TrackRecommender() {
         <button
           type="submit"
           disabled={input.trim().length === 0}
-          className="mt-3 rounded-md bg-[var(--color-gold)] px-5 py-2.5 text-sm font-bold text-[var(--color-ink)] hover:bg-[#dcb567] disabled:cursor-not-allowed disabled:opacity-50"
+          className="mt-3 rounded-md bg-[var(--color-gold)] px-5 py-2.5 text-sm font-bold text-[var(--color-ink)] hover:bg-[#ff8a3d] disabled:cursor-not-allowed disabled:opacity-50"
         >
           Find my track
         </button>
@@ -59,10 +59,10 @@ export function TrackRecommender() {
       <div aria-live="polite">
         {top && top.score > 0 && (
           <div className="rounded-lg border-2 border-[var(--color-accent)] bg-[var(--color-paper)] p-5">
-            <p className="mb-2 font-mono text-xs font-bold uppercase tracking-wide text-[var(--color-accent)]">
+            <p className="mb-2 text-xs font-bold uppercase tracking-wide text-[var(--color-accent)]">
               Best match
             </p>
-            <p className="mb-1 font-mono text-xs font-bold text-[var(--color-brand)]">
+            <p className="mb-1 text-xs font-bold text-[var(--color-brand)]">
               TRACK {top.track.id}
             </p>
             <h3 className="mb-2 text-lg font-bold tracking-tight text-balance">

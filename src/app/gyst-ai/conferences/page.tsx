@@ -64,10 +64,20 @@ export default function GystAiConferencesPage() {
         </div>
       </div>
 
-      <p className="text-sm text-[var(--color-ink-muted)]">
+      <p className="mb-6 text-sm text-[var(--color-ink-muted)]">
         Future editions of {conference.acronym}, and future{" "}
         {conference.hostOrg.acronym} programs, will be listed here as
         they&apos;re announced.
+      </p>
+
+      <p className="text-sm">
+        Questions about {conference.hostOrg.acronym} itself?{" "}
+        <a
+          href={`mailto:${conference.hostOrg.contactEmail}`}
+          className="font-medium text-[var(--color-brand)] underline underline-offset-2"
+        >
+          {conference.hostOrg.contactEmail}
+        </a>
       </p>
     </div>
   );

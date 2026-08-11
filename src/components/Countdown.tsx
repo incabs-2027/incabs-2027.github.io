@@ -54,7 +54,7 @@ export function Countdown({ target, label }: CountdownProps) {
     <span className="font-semibold">
       {formattedDate}
       {remaining && (
-        <span className="ml-2 font-mono text-xs font-semibold text-[var(--color-brand)]">
+        <span className="ml-2 text-xs font-semibold text-[var(--color-brand)]">
           ({remaining})
         </span>
       )}

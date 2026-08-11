@@ -75,7 +75,7 @@ export function DatesTimeline() {
           <div className="flex flex-col items-center">
             <span
               aria-hidden="true"
-              className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--color-brand)] font-mono text-xs font-bold text-white"
+              className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--color-brand)] text-xs font-bold text-white"
             >
               {i + 1}
             </span>

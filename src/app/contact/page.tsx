@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { conference } from "@/lib/conference";
+import { GetInvolved } from "@/components/GetInvolved";
 
 export const metadata: Metadata = {
   title: `Contact | ${conference.acronym} ${conference.year}`,
@@ -12,8 +13,8 @@ export default function ContactPage() {
       <h1 className="mb-6 text-4xl font-extrabold tracking-tight">Contact</h1>
 
       <p className="mb-4">
-        {conference.acronym} {conference.year} is run by a small,
-        mostly-volunteer team at {conference.hostOrg.name}. Before emailing
+        {conference.acronym} {conference.year} is run by a small, fully
+        volunteer team at {conference.hostOrg.name}. Before emailing
         us, a lot of common questions are already answered on the{" "}
         <Link href="/faq" className="text-[var(--color-brand)] underline underline-offset-2">
           FAQ
@@ -28,7 +29,7 @@ export default function ContactPage() {
         pages. Checking there first helps us answer everyone faster.
       </p>
 
-      <div className="space-y-2">
+      <div className="mb-10 space-y-2">
         {conference.contact.emails.map((email) => (
           <p key={email}>
             <a
@@ -40,6 +41,11 @@ export default function ContactPage() {
           </p>
         ))}
       </div>
+
+      <h2 className="mb-4 text-2xl font-extrabold tracking-tight">
+        Get involved
+      </h2>
+      <GetInvolved />
     </div>
   );
 }
