@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { conference } from "@/lib/conference";
 import { Callout } from "@/components/Callout";
 import { SubmissionChecklist } from "@/components/SubmissionChecklist";
+import { DownloadCFP } from "@/components/DownloadCFP";
 import { TBA } from "@/components/TBA";
 
 export const metadata: Metadata = {
@@ -61,12 +62,18 @@ export default function SubmissionPage() {
           .
         </p>
 
-        <dl className="mb-6 grid gap-5 rounded-lg border border-[var(--color-border)] bg-[var(--color-paper-raised)] p-5 sm:grid-cols-3 sm:p-6">
+        <dl className="mb-6 grid gap-5 rounded-lg border border-[var(--color-border)] bg-[var(--color-paper-raised)] p-5 sm:grid-cols-4 sm:p-6">
           <div className="border-l-2 border-[var(--color-accent)] pl-4">
             <dt className="text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
               Length
             </dt>
             <dd className="mt-1.5 font-semibold">Up to {req.maxPages} pages</dd>
+          </div>
+          <div className="border-l-2 border-[var(--color-accent)] pl-4">
+            <dt className="text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
+              File format
+            </dt>
+            <dd className="mt-1.5 font-semibold">{req.fileFormat}</dd>
           </div>
           <div className="border-l-2 border-[var(--color-accent)] pl-4">
             <dt className="text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
@@ -92,22 +99,26 @@ export default function SubmissionPage() {
           How to submit
         </h2>
         <p className="mb-5 max-w-2xl">
-          Papers are submitted through {platform.name}.{" "}
-          {platform.conferenceUrl ? (
+          Papers are submitted through {platform.name}. {platform.scopeNote}
+        </p>
+
+        {platform.conferenceUrl ? (
+          <p className="mb-5">
             <a
               href={platform.conferenceUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold text-[var(--color-brand)] underline underline-offset-2"
+              className="inline-block rounded-md bg-[var(--color-brand)] px-5 py-3 text-sm font-semibold text-white hover:bg-[var(--color-brand-dark)]"
             >
-              Submit your paper on {platform.name} →
+              Submit on {platform.name} →
             </a>
-          ) : (
-            <>
-              CMT submission link: <TBA value={null} label="CMT submission link" />
-            </>
-          )}
-        </p>
+          </p>
+        ) : (
+          <p className="mb-5">
+            {platform.name} submission link:{" "}
+            <TBA value={null} label="CMT submission link" />
+          </p>
+        )}
 
         <Callout variant="disclaimer" title={`${platform.name} disclaimer`}>
           <p>{platform.disclaimer}</p>
@@ -203,7 +214,8 @@ export default function SubmissionPage() {
           Presentation, registration &amp; publication
         </h2>
         <p className="mb-4 max-w-2xl">
-          Accepted papers are invited to present as either:
+          {presentation.inPersonNote} Accepted papers are invited to present
+          as either:
         </p>
         <ul className="mb-5 flex flex-wrap gap-3">
           {presentation.formats.map((f) => (
@@ -245,12 +257,7 @@ export default function SubmissionPage() {
         >
           See key dates
         </Link>
-        <Link
-          href="/call-for-papers"
-          className="rounded-md border border-[var(--color-border)] px-5 py-3 text-sm font-semibold hover:border-[var(--color-brand)]"
-        >
-          Back to Call for Papers
-        </Link>
+        <DownloadCFP variant="secondary" />
       </div>
     </div>
   );

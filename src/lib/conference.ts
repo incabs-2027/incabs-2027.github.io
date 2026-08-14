@@ -1,7 +1,21 @@
 // Single source of truth for every conference fact used across the site.
-// Every value here traces to references/inCABS call for paper.docx.
+//
+// Every value here traces to references/cfp inCABS 27 new.pdf — the finalized
+// Call for Papers, which supersedes references/inCABS call for paper draft.docx
+// wherever the two disagree. The finalized CFP is what is publicly distributed,
+// so it wins any conflict, including with the sibling GYST-AI site.
+//
 // Unknown values are `null`, never an empty string, never a placeholder
 // value intended to be replaced later. `null` is what makes `<TBA />` fire.
+//
+// Dates are stored as ISO calendar days ("2027-02-01") because the calendar
+// export (lib/ics.ts), the countdown, and the schema.org Event all need a
+// machine-readable value. Use formatDate() from lib/formatDate.ts to display
+// one to a reader.
+
+/** The host foundation's own site. Used for every cross-site link, so the
+ *  URL lives in exactly one place. */
+export const GYST_AI_URL = "https://gyst-ai.github.io";
 
 export type TrackId = "T1" | "T2" | "T3" | "T4";
 
@@ -40,12 +54,20 @@ export type ConferenceData = {
     maxPages: number;
     pageScopeNote: string;
     originalityNote: string;
+    fileFormat: string;
     requiredSections: string[];
     teamsAllowed: boolean;
     templateName: string;
     templateUrl: string;
     acmDisclaimer: string;
   };
+  /** The distributed CFP document. Hosted once, here, and linked from the
+   *  GYST-AI site rather than copied there — one file, one URL, no drift. */
+  cfpDocument: {
+    url: string | null;
+    fileSizeLabel: string | null;
+  };
+  tracksNote: string;
   reviewProcess: {
     committeeName: string;
     reviewersPerPaper: number;
@@ -53,6 +75,7 @@ export type ConferenceData = {
   };
   presentation: {
     formats: string[];
+    inPersonNote: string;
     cameraReadyNote: string;
     registrationRequirement: string;
     publicationStatement: string;
@@ -63,6 +86,8 @@ export type ConferenceData = {
     name: string;
     disclaimer: string;
     conferenceUrl: string | null;
+    /** What gets submitted through the platform, not just the final paper. */
+    scopeNote: string;
   };
   academicIntegrity: {
     statement: string;
@@ -78,7 +103,7 @@ export type ConferenceData = {
     emails: string[];
   };
 
-  // Unresolved facts (blocked on the General Chair). null is the only valid
+  // ISO calendar days, or null where still unresolved. null is the only valid
   // "unknown" state. Every one of these renders through <TBA />.
   dates: {
     abstractDeadline: string | null;
@@ -86,6 +111,8 @@ export type ConferenceData = {
     notificationDate: string | null;
     cameraReadyDeadline: string | null;
     authorRegistrationDeadline: string | null;
+    earlyRegistrationDeadline: string | null;
+    regularRegistrationOpens: string | null;
     conferenceStart: string | null;
     conferenceEnd: string | null;
   };
@@ -94,10 +121,32 @@ export type ConferenceData = {
     location: string | null;
   };
   registration: {
+    // Prices are still undecided. No fee table, no payment link, until they
+    // are — the dates below are confirmed, the amounts are not.
     feeAmount: string | null;
     feeNote: string | null;
-    tiers: { name: string; amount: string | null; note: string | null }[];
+    tiers: {
+      name: string;
+      amount: string | null;
+      opensOn: string | null;
+      deadline: string | null;
+      note: string | null;
+    }[];
   };
+};
+
+// Declared before `conference` so the registration tiers can reference these
+// same values instead of repeating the date literals.
+const dates: ConferenceData["dates"] = {
+  abstractDeadline: "2027-01-24",
+  submissionDeadline: "2027-02-01",
+  notificationDate: "2027-04-02",
+  cameraReadyDeadline: "2027-04-30",
+  authorRegistrationDeadline: "2027-04-30",
+  earlyRegistrationDeadline: "2027-05-14",
+  regularRegistrationOpens: "2027-05-15",
+  conferenceStart: "2027-07-08",
+  conferenceEnd: "2027-07-10",
 };
 
 export const conference: ConferenceData = {
@@ -201,6 +250,7 @@ export const conference: ConferenceData = {
     pageScopeNote: "including figures, tables, references, and appendices",
     originalityNote:
       "Submissions must present original work that has not been previously published and is not under review elsewhere.",
+    fileFormat: "PDF",
     requiredSections: [
       "research motivation",
       "methodology",
@@ -215,6 +265,14 @@ export const conference: ConferenceData = {
     acmDisclaimer:
       "inCABS 2027 is not affiliated with or sponsored by ACM; we use this format for consistency and readability.",
   },
+  cfpDocument: {
+    url: "/cfp/inCABS-2027-call-for-papers.pdf",
+    // Stated up front because a lot of this audience is on metered mobile
+    // data, where an unexpected 2 MB download is a real cost.
+    fileSizeLabel: "PDF, 2.1 MB",
+  },
+  tracksNote:
+    "Research is organized around four primary tracks, while remaining open to other relevant topics.",
   reviewProcess: {
     committeeName: "Technical Program Committee (TPC)",
     reviewersPerPaper: 3,
@@ -229,6 +287,8 @@ export const conference: ConferenceData = {
   },
   presentation: {
     formats: ["Oral Presentation", "Poster Presentation"],
+    inPersonNote:
+      "Accepted papers are presented in person at the conference.",
     cameraReadyNote:
       "Authors of accepted papers will be required to submit a final version, called the camera-ready version, incorporating reviewer feedback, where applicable.",
     registrationRequirement:
@@ -248,7 +308,10 @@ export const conference: ConferenceData = {
     name: "Microsoft CMT",
     disclaimer:
       "The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.",
-    conferenceUrl: null,
+    conferenceUrl:
+      "https://cmt3.research.microsoft.com/inCABS2027/Submission/Index",
+    scopeNote:
+      "Abstracts, full papers, and final camera-ready versions are all submitted through the same system.",
   },
   academicIntegrity: {
     statement:
@@ -280,26 +343,36 @@ export const conference: ConferenceData = {
     emails: ["incabs2027@gmail.com"],
   },
 
-  dates: {
-    abstractDeadline: null,
-    submissionDeadline: null,
-    notificationDate: null,
-    cameraReadyDeadline: null,
-    authorRegistrationDeadline: null,
-    conferenceStart: null,
-    conferenceEnd: null,
-  },
+  dates,
   format: {
-    mode: null,
-    location: null,
+    mode: "in-person",
+    location: "Washington, D.C., USA",
   },
   registration: {
     feeAmount: null,
     feeNote: null,
     tiers: [
-      { name: "Early Registration", amount: null, note: null },
-      { name: "Author Registration", amount: null, note: null },
-      { name: "Regular Registration", amount: null, note: null },
+      {
+        name: "Author Registration",
+        amount: null,
+        opensOn: null,
+        deadline: dates.authorRegistrationDeadline,
+        note: "At least one author of every accepted paper must register by this date in order to present.",
+      },
+      {
+        name: "Early Registration",
+        amount: null,
+        opensOn: null,
+        deadline: dates.earlyRegistrationDeadline,
+        note: null,
+      },
+      {
+        name: "Regular Registration",
+        amount: null,
+        opensOn: dates.regularRegistrationOpens,
+        deadline: null,
+        note: "Stays open until the conference days.",
+      },
     ],
   },
 };

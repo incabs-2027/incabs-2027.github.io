@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { conference } from "@/lib/conference";
+import { formatDate, formatDateRange } from "@/lib/formatDate";
 import { TBA } from "./TBA";
 
-const conferenceDates =
-  conference.dates.conferenceStart && conference.dates.conferenceEnd
-    ? `${conference.dates.conferenceStart} – ${conference.dates.conferenceEnd}`
-    : null;
+const conferenceDates = formatDateRange(
+  conference.dates.conferenceStart,
+  conference.dates.conferenceEnd
+);
 
 type Step = {
   id: string;
@@ -18,12 +19,21 @@ type Step = {
 
 const steps: Step[] = [
   {
+    id: "abstract",
+    label: "Abstract",
+    href: "/submission#how-to-submit",
+    description:
+      "Authors submit a short abstract describing the work they intend to present. It goes through the same system as the full paper.",
+    dateLabel: "Abstract deadline",
+    date: formatDate(conference.dates.abstractDeadline),
+  },
+  {
     id: "submit",
     label: "Submit",
     href: "/submission#requirements",
     description: `Authors submit an original paper, up to ${conference.paperRequirements.maxPages} pages, following the ${conference.paperRequirements.templateName}.`,
-    dateLabel: "Submission deadline",
-    date: conference.dates.submissionDeadline,
+    dateLabel: "Full paper deadline",
+    date: formatDate(conference.dates.submissionDeadline),
   },
   {
     id: "review",
@@ -39,7 +49,7 @@ const steps: Step[] = [
     href: "/submission#review",
     description: "Authors receive a decision on their paper.",
     dateLabel: "Notification date",
-    date: conference.dates.notificationDate,
+    date: formatDate(conference.dates.notificationDate),
   },
   {
     id: "camera-ready",
@@ -47,7 +57,7 @@ const steps: Step[] = [
     href: "/submission#presentation",
     description: "Accepted authors submit a final version incorporating reviewer feedback.",
     dateLabel: "Camera-ready deadline",
-    date: conference.dates.cameraReadyDeadline,
+    date: formatDate(conference.dates.cameraReadyDeadline),
   },
   {
     id: "register",
@@ -55,7 +65,7 @@ const steps: Step[] = [
     href: "/submission#presentation",
     description: "At least one author registers to present the paper at the conference.",
     dateLabel: "Author registration deadline",
-    date: conference.dates.authorRegistrationDeadline,
+    date: formatDate(conference.dates.authorRegistrationDeadline),
   },
   {
     id: "present",

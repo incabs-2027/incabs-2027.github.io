@@ -1,5 +1,7 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import { conference } from "@/lib/conference";
+import { formatDateRange } from "@/lib/formatDate";
 import { DatesTimeline } from "@/components/DatesTimeline";
 import { AddToCalendarButton } from "@/components/AddToCalendarButton";
 import { TBA } from "@/components/TBA";
@@ -9,10 +11,21 @@ export const metadata: Metadata = {
   title: `Key Dates | ${conference.acronym} ${conference.year}`,
 };
 
+const conferenceDates = formatDateRange(
+  conference.dates.conferenceStart,
+  conference.dates.conferenceEnd
+);
+
+const formatAndLocation =
+  conference.format.mode && conference.format.location
+    ? `In person · ${conference.format.location}`
+    : conference.format.location;
+
 // Only dates the foundation has actually confirmed become calendar events —
 // this list is empty (and the button doesn't render) until that happens.
 const calendarEvents: CalendarEvent[] = [
-  { uid: "submission-deadline", title: "Submission deadline", date: conference.dates.submissionDeadline },
+  { uid: "abstract-deadline", title: "Abstract deadline", date: conference.dates.abstractDeadline },
+  { uid: "submission-deadline", title: "Full paper deadline", date: conference.dates.submissionDeadline },
   { uid: "notification-date", title: "Notification date", date: conference.dates.notificationDate },
   { uid: "camera-ready-deadline", title: "Camera-ready deadline", date: conference.dates.cameraReadyDeadline },
   { uid: "author-registration-deadline", title: "Author registration deadline", date: conference.dates.authorRegistrationDeadline },
@@ -28,9 +41,15 @@ export default function DatesPage() {
         <div>
           <h1 className="mb-3 text-4xl font-extrabold tracking-tight">Key Dates</h1>
           <p className="max-w-xl text-[var(--color-ink-muted)]">
-            Nothing here is invented. Every date below will be filled in the
-            moment {conference.hostOrg.acronym} confirms it — until then it
-            honestly says &ldquo;To be announced.&rdquo;
+            These dates are confirmed and come straight from the{" "}
+            <Link
+              href="/call-for-papers"
+              className="font-medium text-[var(--color-brand)] underline underline-offset-2"
+            >
+              Call for Papers
+            </Link>
+            . Anything still undecided says &ldquo;To be announced&rdquo;
+            rather than being guessed at.
           </p>
         </div>
         {calendarEvents.length > 0 && (
@@ -51,10 +70,18 @@ export default function DatesPage() {
       <dl className="mt-4 grid gap-5 rounded-lg border border-[var(--color-border)] bg-[var(--color-paper-raised)] p-5 sm:grid-cols-2 sm:p-6">
         <div className="border-l-2 border-[var(--color-accent)] pl-4">
           <dt className="text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
+            Conference dates
+          </dt>
+          <dd className="mt-1.5 font-semibold">
+            <TBA value={conferenceDates} label="Conference dates" />
+          </dd>
+        </div>
+        <div className="border-l-2 border-[var(--color-accent)] pl-4">
+          <dt className="text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
             Format &amp; location
           </dt>
           <dd className="mt-1.5 font-semibold">
-            <TBA value={conference.format.location} label="Format & location" />
+            <TBA value={formatAndLocation} label="Format & location" />
           </dd>
         </div>
         <div className="border-l-2 border-[var(--color-accent)] pl-4">

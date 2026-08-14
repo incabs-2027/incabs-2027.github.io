@@ -1,11 +1,22 @@
 import Link from "next/link";
 import Image from "next/image";
 import { conference } from "@/lib/conference";
+import { formatDateRange } from "@/lib/formatDate";
 import { TBA } from "@/components/TBA";
 import { Countdown } from "@/components/Countdown";
 import { TrackCard } from "@/components/TrackCard";
 import { Callout } from "@/components/Callout";
 import { GetInvolved } from "@/components/GetInvolved";
+
+const conferenceDates = formatDateRange(
+  conference.dates.conferenceStart,
+  conference.dates.conferenceEnd
+);
+
+const formatAndLocation =
+  conference.format.mode && conference.format.location
+    ? `In person · ${conference.format.location}`
+    : conference.format.location;
 
 export default function Home() {
   return (
@@ -86,6 +97,19 @@ export default function Home() {
           <p className="mt-5 max-w-2xl text-lg font-semibold text-[var(--color-panel-ink)]">
             {conference.acronym} {conference.year}, {conference.name}
           </p>
+          {(conferenceDates || conference.format.location) && (
+            <p className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-base font-bold text-[var(--color-gold)]">
+              {conferenceDates && <span>{conferenceDates}</span>}
+              {conferenceDates && conference.format.location && (
+                <span aria-hidden="true" className="opacity-50">
+                  ·
+                </span>
+              )}
+              {conference.format.location && (
+                <span>{conference.format.location}</span>
+              )}
+            </p>
+          )}
           <p className="mt-3 max-w-2xl text-[var(--color-panel-muted)]">
             A student research conference for high school researchers
             worldwide. Submit original work, get real peer review, and
@@ -139,10 +163,10 @@ export default function Home() {
           <dl className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             <div className="border-l-2 border-[var(--color-accent)] pl-4">
               <dt className="text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
-                Format
+                Conference
               </dt>
               <dd className="mt-1.5 font-semibold">
-                <TBA value={conference.format.mode} label="Format" />
+                <TBA value={conferenceDates} label="Conference dates" />
               </dd>
             </div>
             <div className="border-l-2 border-[var(--color-accent)] pl-4">
@@ -150,25 +174,30 @@ export default function Home() {
                 Location
               </dt>
               <dd className="mt-1.5 font-semibold">
-                <TBA value={conference.format.location} label="Location" />
+                <TBA value={formatAndLocation} label="Location" />
               </dd>
             </div>
             <div className="border-l-2 border-[var(--color-accent)] pl-4">
               <dt className="text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
-                Submission deadline
+                Abstract deadline
               </dt>
               <dd className="mt-1.5">
                 <Countdown
-                  target={conference.dates.submissionDeadline}
-                  label="Submission deadline"
+                  target={conference.dates.abstractDeadline}
+                  label="Abstract deadline"
                 />
               </dd>
             </div>
             <div className="border-l-2 border-[var(--color-accent)] pl-4">
               <dt className="text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
-                Working language
+                Full paper deadline
               </dt>
-              <dd className="mt-1.5 font-semibold">{conference.language}</dd>
+              <dd className="mt-1.5">
+                <Countdown
+                  target={conference.dates.submissionDeadline}
+                  label="Full paper deadline"
+                />
+              </dd>
             </div>
           </dl>
           <Link

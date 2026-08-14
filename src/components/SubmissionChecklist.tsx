@@ -14,6 +14,7 @@ export function SubmissionChecklist() {
     `At most ${req.maxPages} pages, ${req.pageScopeNote}.`,
     "Original work — not previously published, and not under review elsewhere.",
     `Formatted using the ${req.templateName}.`,
+    `Saved as a ${req.fileFormat}.`,
     ...req.requiredSections.map(
       (section) => `Includes a ${section} section.`
     ),

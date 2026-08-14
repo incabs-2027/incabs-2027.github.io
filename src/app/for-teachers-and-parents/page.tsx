@@ -1,12 +1,18 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { conference } from "@/lib/conference";
+import { formatDateRange } from "@/lib/formatDate";
 import { TBA } from "@/components/TBA";
 import { Callout } from "@/components/Callout";
 
 export const metadata: Metadata = {
   title: `For Teachers & Parents | ${conference.acronym} ${conference.year}`,
 };
+
+const conferenceDates = formatDateRange(
+  conference.dates.conferenceStart,
+  conference.dates.conferenceEnd
+);
 
 export default function ForTeachersAndParentsPage() {
   return (
@@ -51,11 +57,11 @@ export default function ForTeachersAndParentsPage() {
         Proceedings format. {conference.paperRequirements.acmDisclaimer}
       </p>
       <p className="mb-8">
-        Every unresolved detail on this site, including dates, format, and
-        fees, is marked &ldquo;To be announced&rdquo; rather than guessed
-        at. That is
-        deliberate. Inventing details to look more finished would be a red
-        flag, not a reassurance.
+        Dates, location, and the submission system are now confirmed and
+        published. Anything still undecided — the registration fee, the
+        specific venue — is marked &ldquo;To be announced&rdquo; rather than
+        guessed at. That is deliberate. Inventing details to look more
+        finished would be a red flag, not a reassurance.
       </p>
 
       <h2 className="mb-3 text-2xl font-extrabold tracking-tight">Cost</h2>
@@ -71,14 +77,31 @@ export default function ForTeachersAndParentsPage() {
       <h2 className="mb-3 text-2xl font-extrabold tracking-tight">
         What participation involves
       </h2>
-      <p className="mb-8">
-        A student submits a paper, it goes through peer review, and they
-        receive a decision. If accepted, they revise, register, and present.
-        The full timeline, once dates are set, will be on the{" "}
+      <p className="mb-4">
+        A student submits an abstract, then a full paper. It goes through
+        peer review, and they receive a decision. If accepted, they revise,
+        register, and present. The full timeline is on the{" "}
         <Link href="/dates" className="text-[var(--color-brand)] underline underline-offset-2">
           Key Dates
         </Link>{" "}
         page.
+      </p>
+      <p className="mb-8">
+        The conference itself is held{" "}
+        <span className="font-semibold">
+          <TBA value={conferenceDates} label="Conference dates" />
+        </span>{" "}
+        in{" "}
+        <span className="font-semibold">
+          <TBA value={conference.format.location} label="Location" />
+        </span>
+        , in person. Attending means travelling there, so it is worth
+        checking the{" "}
+        <Link href="/travel" className="text-[var(--color-brand)] underline underline-offset-2">
+          Travel &amp; Venue
+        </Link>{" "}
+        page — particularly the visa guidance — well before the registration
+        deadline.
       </p>
 
       <h2 className="mb-3 text-2xl font-extrabold tracking-tight">Student data</h2>
@@ -88,10 +111,14 @@ export default function ForTeachersAndParentsPage() {
           no forms, no accounts, and no analytics on it.
         </p>
         <p>
-          Paper submission will happen through a separate external platform
-          (still being decided) that will carry its own privacy policy. We
-          are not in a position to make promises about that platform here.
-          When it is chosen, this page will link to it and to its policy.
+          Paper submission happens through{" "}
+          {conference.submissionPlatform.name}, a separate external platform
+          run by Microsoft that carries its own privacy policy and account
+          system. Students create an account there, not here. We are not in a
+          position to make promises on that platform&apos;s behalf — please
+          read its own terms. The{" "}
+          <Link href="/submission">Submission</Link> page links straight to
+          it.
         </p>
       </Callout>
     </div>

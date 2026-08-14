@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
 import { conference } from "@/lib/conference";
+import { formatDateRange } from "@/lib/formatDate";
 import { TBA } from "@/components/TBA";
 
 export const metadata: Metadata = {
   title: `Travel & Venue | ${conference.acronym} ${conference.year}`,
 };
+
+const conferenceDates = formatDateRange(
+  conference.dates.conferenceStart,
+  conference.dates.conferenceEnd
+);
 
 export default function TravelPage() {
   return (
@@ -13,15 +19,21 @@ export default function TravelPage() {
         Travel &amp; Venue
       </h1>
       <p className="mb-8 max-w-2xl text-[var(--color-ink-muted)]">
-        This page will fill in once a host city and venue are confirmed.
-        Nothing here is invented in the meantime.
+        The host city and conference dates are confirmed. The specific venue,
+        hotel, and travel details are still being arranged, and are marked
+        below rather than guessed at.
       </p>
 
       <h2 className="mb-3 text-2xl font-extrabold tracking-tight">
         Location
       </h2>
-      <p className="mb-8">
+      <p className="mb-2 text-lg font-semibold">
         <TBA value={conference.format.location} label="Location" />
+      </p>
+      <p className="mb-8 text-[var(--color-ink-muted)]">
+        {conferenceDates ? `${conferenceDates}. ` : ""}
+        {conference.presentation.inPersonNote} The exact venue within the
+        city will be announced here.
       </p>
 
       <h2 className="mb-3 text-2xl font-extrabold tracking-tight">
@@ -46,9 +58,10 @@ export default function TravelPage() {
         registered — details on requesting one will be posted here.
       </p>
       <p className="mb-8">
-        If you may need a visa to travel to the conference location, start
-        with the U.S. Department of State&apos;s overview of visa
-        requirements:{" "}
+        The conference is held in the United States, so most international
+        authors will need either a visa or an approved ESTA under the Visa
+        Waiver Program. Start with the U.S. Department of State&apos;s
+        overview of visa requirements:{" "}
         <a
           href="https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html"
           target="_blank"

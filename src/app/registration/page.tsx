@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { conference } from "@/lib/conference";
+import { formatDate } from "@/lib/formatDate";
 import { TBA } from "@/components/TBA";
 
 export const metadata: Metadata = {
@@ -14,10 +15,11 @@ export default function RegistrationPage() {
         Registration
       </h1>
       <p className="mb-8 max-w-2xl text-[var(--color-ink-muted)]">
-        No registration fee has been announced yet, and none will be
-        collected until one is. This page will list real prices, and this
-        site will link to a payment method, only once that decision is made
-        and published here first.
+        The registration dates below are confirmed. The prices are not — no
+        fee has been announced yet, and none will be collected until one is.
+        This page will list real amounts, and this site will link to a
+        payment method, only once that decision is made and published here
+        first.
       </p>
 
       <div className="mb-8 space-y-4">
@@ -30,6 +32,13 @@ export default function RegistrationPage() {
             <p className="mt-1.5 text-xl font-extrabold">
               <TBA value={tier.amount} label={`${tier.name} fee`} />
             </p>
+            {(tier.opensOn || tier.deadline) && (
+              <p className="mt-2 text-sm font-semibold text-[var(--color-brand)]">
+                {tier.opensOn
+                  ? `Opens ${formatDate(tier.opensOn)}`
+                  : `Deadline: ${formatDate(tier.deadline)}`}
+              </p>
+            )}
             {tier.note && (
               <p className="mt-2 text-sm text-[var(--color-ink-muted)]">
                 {tier.note}
@@ -48,7 +57,7 @@ export default function RegistrationPage() {
         >
           Key Dates
         </Link>{" "}
-        page for the deadline once it&apos;s announced.
+        page for the full schedule.
       </p>
     </div>
   );

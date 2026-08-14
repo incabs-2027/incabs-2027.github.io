@@ -1,12 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
-import { conference } from "@/lib/conference";
+import { conference, GYST_AI_URL } from "@/lib/conference";
 
 export function Footer() {
   return (
     <footer className="mt-16 bg-[var(--color-panel)]">
       <div className="px-4 py-10 sm:px-6 lg:px-10 xl:px-16">
-        <Link href="/gyst-ai/conferences" className="flex items-center gap-3">
+        {/* The foundation now has its own site, so this points there rather
+            than at a stub page living in this repo. */}
+        <a href={GYST_AI_URL} className="flex items-center gap-3">
           <span className="flex items-center justify-center rounded-lg bg-[var(--color-paper)] p-1.5">
             <Image
               src="/images/gystai-logo.png"
@@ -19,7 +21,7 @@ export function Footer() {
           <span className="text-base font-bold tracking-tight text-[var(--color-panel-ink)] underline decoration-[var(--color-gold)] underline-offset-4">
             Hosted by {conference.hostOrg.name} ({conference.hostOrg.acronym})
           </span>
-        </Link>
+        </a>
         <p className="mt-2 text-sm text-[var(--color-panel-muted)]">
           {conference.hostOrg.tagline}
         </p>
