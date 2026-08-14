@@ -28,19 +28,39 @@ export default function RegistrationPage() {
             key={tier.name}
             className="rounded-lg border border-[var(--color-border)] bg-[var(--color-paper-raised)] p-5 sm:p-6"
           >
-            <p className="text-lg font-bold tracking-tight">{tier.name}</p>
-            <p className="mt-1.5 text-xl font-extrabold">
-              <TBA value={tier.amount} label={`${tier.name} fee`} />
+            <p className="mb-4 text-lg font-bold tracking-tight">
+              {tier.name}
             </p>
-            {(tier.opensOn || tier.deadline) && (
-              <p className="mt-2 text-sm font-semibold text-[var(--color-brand)]">
-                {tier.opensOn
-                  ? `Opens ${formatDate(tier.opensOn)}`
-                  : `Deadline: ${formatDate(tier.deadline)}`}
-              </p>
-            )}
+
+            {/* Fee and date are labelled separately and side by side. The
+                dates are confirmed while the amounts are not, so an
+                unlabelled "To be announced" here reads as though the whole
+                tier were unsettled — and sits directly above a real date
+                that says otherwise. */}
+            <dl className="grid gap-4 sm:grid-cols-2">
+              <div className="border-l-2 border-[var(--color-accent)] pl-4">
+                <dt className="text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
+                  Fee
+                </dt>
+                <dd className="mt-1.5 text-xl font-extrabold">
+                  <TBA value={tier.amount} label={`${tier.name} fee`} />
+                </dd>
+              </div>
+
+              {(tier.opensOn || tier.deadline) && (
+                <div className="border-l-2 border-[var(--color-accent)] pl-4">
+                  <dt className="text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
+                    {tier.opensOn ? "Opens" : "Deadline"}
+                  </dt>
+                  <dd className="mt-1.5 text-xl font-extrabold">
+                    {formatDate(tier.opensOn ?? tier.deadline)}
+                  </dd>
+                </div>
+              )}
+            </dl>
+
             {tier.note && (
-              <p className="mt-2 text-sm text-[var(--color-ink-muted)]">
+              <p className="mt-4 text-sm text-[var(--color-ink-muted)]">
                 {tier.note}
               </p>
             )}
