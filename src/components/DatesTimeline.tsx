@@ -61,11 +61,20 @@ const steps: Step[] = [
   },
   {
     id: "register",
-    label: "Register",
+    label: "Author Registration Deadline",
     href: "/submission#presentation",
     description: "At least one author registers to present the paper at the conference.",
     dateLabel: "Author registration deadline",
     date: formatDate(conference.dates.authorRegistrationDeadline),
+  },
+  {
+    id: "early-registration",
+    label: "Early Registration Deadline",
+    href: "/registration",
+    description:
+      "The early registration window closes. Regular registration opens the following day and stays open until the conference days.",
+    dateLabel: "Early registration deadline",
+    date: formatDate(conference.dates.earlyRegistrationDeadline),
   },
   {
     id: "present",

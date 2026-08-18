@@ -29,6 +29,7 @@ const calendarEvents: CalendarEvent[] = [
   { uid: "notification-date", title: "Notification date", date: conference.dates.notificationDate },
   { uid: "camera-ready-deadline", title: "Camera-ready deadline", date: conference.dates.cameraReadyDeadline },
   { uid: "author-registration-deadline", title: "Author registration deadline", date: conference.dates.authorRegistrationDeadline },
+  { uid: "early-registration-deadline", title: "Early registration deadline", date: conference.dates.earlyRegistrationDeadline },
   { uid: "conference-start", title: "Conference begins", date: conference.dates.conferenceStart },
 ]
   .filter((event): event is { uid: string; title: string; date: string } => event.date !== null)
