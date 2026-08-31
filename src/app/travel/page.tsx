@@ -76,8 +76,23 @@ export default function TravelPage() {
       <h2 className="mb-3 text-2xl font-extrabold tracking-tight">
         Things to do
       </h2>
+      <p className="mb-2">
+        Washington, D.C. is a good city to be a student in. The official
+        visitor site for the city keeps a current guide to its museums,
+        monuments, and neighborhoods:{" "}
+        <a
+          href="https://washington.org/things-do-washington-dc"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-medium text-[var(--color-brand)] underline underline-offset-2"
+        >
+          washington.org: Things to do in Washington, DC
+        </a>
+        .
+      </p>
       <p>
-        <TBA value={null} label="Things to do near the conference" />
+        Once the venue and hotel are settled, we will add what is within
+        walking distance of them.
       </p>
     </div>
   );
