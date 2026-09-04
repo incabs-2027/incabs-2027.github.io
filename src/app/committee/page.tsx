@@ -23,35 +23,33 @@ export default function CommitteePage() {
         Organizing Committee
       </h1>
 
-      <div className="mb-8 space-y-4">
+      <div className="mb-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {conference.committee.map((member) => (
           <div
             key={member.name}
-            className="flex items-start gap-4 rounded-lg border-l-4 border-l-[var(--color-brand)] bg-[var(--color-paper)] p-5 shadow-sm"
+            className="flex h-full flex-col items-center rounded-lg border-t-4 border-t-[var(--color-brand)] bg-[var(--color-paper)] p-6 text-center shadow-sm"
           >
             {member.photoUrl ? (
               <Image
                 src={member.photoUrl}
                 alt={member.name}
-                width={64}
-                height={64}
-                className="h-16 w-16 shrink-0 rounded-full object-cover"
+                width={96}
+                height={96}
+                className="h-24 w-24 shrink-0 rounded-full object-cover"
               />
             ) : (
               <span
                 aria-hidden="true"
-                className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-paper-raised)] text-lg font-bold text-[var(--color-ink-muted)]"
+                className="flex h-24 w-24 shrink-0 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-paper-raised)] text-2xl font-bold text-[var(--color-ink-muted)]"
               >
                 {initials(member.name)}
               </span>
             )}
-            <div>
-              <p className="text-lg font-bold tracking-tight">{member.name}</p>
-              <p className="text-[var(--color-ink-muted)]">{member.role}</p>
-              <p className="mt-2 text-sm">
-                Affiliation: <TBA value={member.affiliation} label="Affiliation" />
-              </p>
-            </div>
+            <p className="mt-4 text-lg font-bold tracking-tight">{member.name}</p>
+            <p className="text-[var(--color-ink-muted)]">{member.role}</p>
+            <p className="mt-2 text-sm">
+              Affiliation: <TBA value={member.affiliation} label="Affiliation" />
+            </p>
           </div>
         ))}
       </div>
