@@ -99,6 +99,8 @@ export type ConferenceData = {
   };
   committee: CommitteeMember[];
   committeeClosingNote: string;
+  /** Who built this website. The credit label/title are UI copy and live
+   *  with the component that renders this. */
   acknowledgement: string;
   contact: {
     emails: string[];
@@ -346,8 +348,7 @@ export const conference: ConferenceData = {
     },
   ],
   committeeClosingNote: "Additional committee members will be announced.",
-  acknowledgement:
-    "Thank you to Sri Bhargava Bhamidi for building the initial website for inCABS.",
+  acknowledgement: "Sri Bhargava Bhamidi",
   contact: {
     emails: ["incabs2027@gmail.com"],
   },
