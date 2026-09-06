@@ -347,7 +347,7 @@ export const conference: ConferenceData = {
   ],
   committeeClosingNote: "Additional committee members will be announced.",
   acknowledgement:
-    "Thank you to Sri Bhargava Bhamidi for building the initial website for inCABS.",
+    "Bhargava volunteered his time and skills to design and build this website, giving inCABS its first home online. Thank you, Bhargava.",
   contact: {
     emails: ["incabs2027@gmail.com"],
   },
