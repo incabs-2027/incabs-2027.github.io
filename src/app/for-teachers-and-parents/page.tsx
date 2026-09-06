@@ -22,65 +22,69 @@ export default function ForTeachersAndParentsPage() {
       </h1>
 
       <p className="mb-8 max-w-2xl">
-        A student wants to submit a paper here, and you&apos;re doing the
-        sensible thing, checking whether this is real before they invest
+        Your student wants to submit a paper to this conference, and you&apos;re wondering whether this is a legitimate
+        conference before they invest
         time in it. Here&apos;s a direct answer to that.
       </p>
 
       <h2 className="mb-3 text-2xl font-extrabold tracking-tight">
-        Who runs this
+        Who runs this conference?
       </h2>
       <p className="mb-8">
         {conference.acronym} {conference.year} is organized by{" "}
         {conference.hostOrg.name} ({conference.hostOrg.acronym}). The
-        General Chair and Program Chair is {conference.committee[0].name}
+        General Chair and Program Chair is Ms. {conference.committee[0].name}
         {conference.committee[0].affiliation
           ? `, ${conference.committee[0].affiliation}`
           : ""}
         . This is the inaugural edition, the first time this conference has
-        run, and it is organized by a newly formed foundation. We think
-        that&apos;s worth saying plainly rather than dressing it up.
+        run.
       </p>
 
       <h2 className="mb-3 text-2xl font-extrabold tracking-tight">
-        How to check this is legitimate
+        How serious is this conference?
       </h2>
       <p className="mb-3">
-        Submitted papers go through independent peer review, roughly{" "}
-        {conference.reviewProcess.reviewersPerPaper} reviewers per paper,
-        before acceptance. That review process, and everything else about
-        submitting, is documented publicly on the{" "}
+        We run this conference as rigorous as any other professional academic conferences
+        by following exactly the same process. All submitted papers will go through an independent but rigorous
+         review process. Each submission will receive about{" "}
+        {conference.reviewProcess.reviewersPerPaper} reviews before the paper's acceptance/rejection decision.
+        The review process is documented publicly on the{" "}
         <Link href="/submission" className="text-[var(--color-brand)] underline underline-offset-2">
           Submission
         </Link>{" "}
-        page rather than handled privately. Formatting follows the ACM SIG
-        Proceedings format. {conference.paperRequirements.acmDisclaimer}
+        page. All submissions have to be formated according to the ACM SIG
+        Proceedings format, though{" "}{conference.paperRequirements.acmDisclaimer}
       </p>
       <p className="mb-8">
-        Dates, location, and the submission system are now confirmed and
-        published. Anything still undecided — the registration fee, the
-        specific venue — is marked &ldquo;To be announced&rdquo; rather than
-        guessed at. That is deliberate. Inventing details to look more
-        finished would be a red flag, not a reassurance.
+        Dates, location, and the submission system are confirmed and
+        published. Anything still undecided is marked &ldquo;To be announced&rdquo;. 
       </p>
 
-      <h2 className="mb-3 text-2xl font-extrabold tracking-tight">Cost</h2>
+      <h2 className="mb-3 text-2xl font-extrabold tracking-tight">How much does the conference cost?</h2>
       <p className="mb-2">
         Registration fee: <TBA value={conference.registration.feeAmount} label="Registration fee" />
       </p>
       <p className="mb-8">
-        No fee has been announced, and none will be collected until one is.
-        This site does not carry payment links or fee tables until that
+        The conference is run through volunteers and hosted by the non-profit organization. The conference registration
+        fee will be used to cover the operational cost of running conference (such as venues, materails, and food). Based on the actual submission
+        numbers and the sponsorship received, we will determine a lowest possible registration fee for conference attendees. Before than, no 
+        fee has been announced, and none will be collected until then.
+        This website does not carry payment links or fee tables until that
         decision is made and published here first.
       </p>
 
+      <p className="mb-8">
+        Conference paper submission is completely free without any cost.
+      </p>
+
       <h2 className="mb-3 text-2xl font-extrabold tracking-tight">
-        What participation involves
+        What participation involves?
       </h2>
       <p className="mb-4">
-        A student submits an abstract, then a full paper. It goes through
-        peer review, and they receive a decision. If accepted, they revise,
-        register, and present. The full timeline is on the{" "}
+        A student submits an abstract, then a full paper. The papers go through
+        peer review, and then receive a decision. If accepted, students will revise,
+        register, and present their paper. The full timeline is on the{" "}
         <Link href="/dates" className="text-[var(--color-brand)] underline underline-offset-2">
           Key Dates
         </Link>{" "}

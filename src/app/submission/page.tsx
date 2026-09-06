@@ -28,9 +28,7 @@ export default function SubmissionPage() {
     <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-14 lg:px-10 xl:px-16 3xl:max-w-4xl">
       <h1 className="mb-3 text-4xl font-extrabold tracking-tight">Submission</h1>
       <p className="mb-8 max-w-2xl text-[var(--color-ink-muted)]">
-        What to prepare, how it&apos;s judged, and what happens after you hit
-        send — the same process every author goes through, whether this is
-        your first paper or your fifth.
+        Ready to submit your work? Please follow the steps below.
       </p>
 
       <nav aria-label="Jump to a section" className="mb-10 flex flex-wrap gap-2">
@@ -50,8 +48,8 @@ export default function SubmissionPage() {
           Requirements
         </h2>
         <p className="mb-5 max-w-2xl">
-          Papers must be original, unpublished, at most {req.maxPages} pages,
-          and written in {req.language}. For the full requirement list and
+          Papers must be original, unpublished, 
+          and written in {req.language} with no more than {req.maxPages} pages. For the full requirement list and
           what each section of your paper should cover, see the{" "}
           <Link
             href="/call-for-papers"
@@ -96,10 +94,10 @@ export default function SubmissionPage() {
 
       <section id="how-to-submit" className="mb-12 scroll-mt-20">
         <h2 className="mb-3 text-2xl font-extrabold tracking-tight">
-          How to submit
+          Where to submit
         </h2>
         <p className="mb-5 max-w-2xl">
-          Papers are submitted through {platform.name}. {platform.scopeNote}
+          Papers are submitted through the official conference submission system below at {platform.name}. {platform.scopeNote}
         </p>
 
         {platform.conferenceUrl ? (
@@ -126,7 +124,7 @@ export default function SubmissionPage() {
       </section>
 
       <section id="format" className="mb-12 scroll-mt-20">
-        <h2 className="mb-3 text-2xl font-extrabold tracking-tight">Format</h2>
+        <h2 className="mb-3 text-2xl font-extrabold tracking-tight">Submission Format</h2>
         <Callout variant="disclaimer" title="Formatting template">
           <p>
             Papers must be formatted using the {req.templateName}. Template
@@ -191,9 +189,8 @@ export default function SubmissionPage() {
             {review.reviewersPerPaper}
           </span>
           <span>
-            Every submission goes through peer review by the{" "}
-            {review.committeeName} — about {review.reviewersPerPaper}{" "}
-            independent reviewers with expertise relevant to your track.
+            Every submission goes through a rigorous review process done by conference's{" "}
+            {review.committeeName}.
           </span>
         </p>
         <p className="mb-3 font-semibold">Reviewers evaluate each paper on:</p>
@@ -242,7 +239,7 @@ export default function SubmissionPage() {
 
       <Callout variant="reassurance" title="First time submitting a research paper?">
         <p>
-          You don&apos;t need a lab or a professor to submit here. Read the{" "}
+          No a problem. Please read the{" "}
           <Link href="/faq">frequently asked questions</Link> for honest
           answers to the questions most first-time student researchers have,
           or check the <Link href="/call-for-papers">Call for Papers</Link>{" "}

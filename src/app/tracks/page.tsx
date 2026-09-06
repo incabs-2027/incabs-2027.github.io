@@ -34,12 +34,8 @@ export default function TracksPage() {
       <TrackRecommender />
 
       <h2 className="mb-2 mt-12 text-2xl font-extrabold tracking-tight">
-        Or browse all four tracks
+        Or browse all four tracks in detail below.
       </h2>
-      <p className="mb-6 max-w-2xl text-[var(--color-ink-muted)]">
-        Want to compare them yourself, or double-check what the tool told
-        you? Here&apos;s the full picture.
-      </p>
 
       <div className="border-t border-[var(--color-border)]">
         {conference.tracks.map((track, index) => (
@@ -50,9 +46,7 @@ export default function TracksPage() {
       <div className="mt-6">
         <Callout variant="reassurance">
           <p>
-            Still not sure which track fits your project? Pick whichever one
-            your work leans on most. Reviewers judge substance, not the
-            label. More questions like this are answered on the{" "}
+            Still not sure which track fits your project? More questions like this are answered on the{" "}
             <Link href="/faq">FAQ page</Link>.
           </p>
         </Callout>

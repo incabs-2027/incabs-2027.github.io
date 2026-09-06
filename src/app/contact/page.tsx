@@ -14,7 +14,7 @@ export default function ContactPage() {
 
       <p className="mb-4">
         {conference.acronym} {conference.year} is run by a small, fully
-        volunteer team at {conference.hostOrg.name}. Before emailing
+        volunteer team. Before emailing
         us, a lot of common questions are already answered on the{" "}
         <Link href="/faq" className="text-[var(--color-brand)] underline underline-offset-2">
           FAQ

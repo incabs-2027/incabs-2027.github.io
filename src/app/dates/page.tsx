@@ -64,7 +64,7 @@ export default function DatesPage() {
       </div>
 
       <h2 className="mb-5 text-xs font-bold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
-        What happens, in order
+        Key events and due dates
       </h2>
       <DatesTimeline />
 

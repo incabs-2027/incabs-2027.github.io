@@ -77,7 +77,7 @@ export default function TravelPage() {
         Things to do
       </h2>
       <p className="mb-2">
-        Washington, D.C. is a good city to be a student in. The official
+        Washington, D.C. is a great city to be in. The official
         visitor site for the city keeps a current guide to its museums,
         monuments, and neighborhoods:{" "}
         <a

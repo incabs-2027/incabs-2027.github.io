@@ -327,13 +327,13 @@ export const conference: ConferenceData = {
   committee: [
     {
       name: "Chenlyvia Xiong",
-      role: "Founding General Chair, Program Chair & Founding GYST-AI President",
+      role: "Founding General Chair & Program Chair",
       affiliation: "Ronald Reagan High School, San Antonio, Texas",
       photoUrl: null,
     },
     {
       name: "Zimo Wen",
-      role: "Program Secretary, GYST-AI Secretary",
+      role: "Treasurer",
       affiliation: "Williamsville East High School, Buffalo, New York",
       photoUrl: null,
     },
@@ -357,7 +357,7 @@ export const conference: ConferenceData = {
         amount: null,
         opensOn: null,
         deadline: dates.authorRegistrationDeadline,
-        note: "At least one author of every accepted paper must register by this date in order to present.",
+        note: "At least one author of every accepted paper must register by this date in order to be invited to present at the conference.",
       },
       {
         name: "Early Registration",
@@ -371,7 +371,7 @@ export const conference: ConferenceData = {
         amount: null,
         opensOn: dates.regularRegistrationOpens,
         deadline: null,
-        note: "Stays open until the conference days.",
+        note: "Stays open until the conference daytes.",
       },
     ],
   },

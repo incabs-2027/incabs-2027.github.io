@@ -15,11 +15,8 @@ export default function RegistrationPage() {
         Registration
       </h1>
       <p className="mb-8 max-w-2xl text-[var(--color-ink-muted)]">
-        The registration dates below are confirmed. The prices are not — no
-        fee has been announced yet, and none will be collected until one is.
-        This page will list real amounts, and this site will link to a
-        payment method, only once that decision is made and published here
-        first.
+        The registration dates below are confirmed. More details will become available as things settle down.
+  
       </p>
 
       <div className="mb-8 space-y-4">
@@ -70,7 +67,7 @@ export default function RegistrationPage() {
 
       <p className="text-sm text-[var(--color-ink-muted)]">
         At least one author of every accepted paper must register by the
-        Author Registration Deadline to present. See the{" "}
+        Author Registration Deadline to be invited to present at the conference. See the{" "}
         <Link
           href="/dates"
           className="font-medium text-[var(--color-brand)] underline underline-offset-2"

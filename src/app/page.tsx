@@ -75,23 +75,13 @@ export default function Home() {
         </svg>
 
         <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:px-10 xl:px-16">
-          <span className="mb-6 inline-flex items-center justify-center rounded-lg bg-[var(--color-paper)] p-2.5 shadow-sm">
-            <Image
-              src="/images/incabs2-logo.png"
-              alt={`${conference.acronym} ${conference.year} logo`}
-              width={299}
-              height={320}
-              priority
-              className="h-16 w-auto sm:h-20"
-            />
-          </span>
           <p className="mb-4 text-xs font-bold uppercase tracking-[0.14em] text-[var(--color-accent)]">
             {"// "}
             {conference.hostOrg.acronym} presents
           </p>
           <h1 className="max-w-3xl text-4xl font-extrabold leading-[1.08] tracking-tight text-balance sm:text-5xl">
             AI in biomedical sciences, from the{" "}
-            <span className="text-[var(--color-gold)]">researchers</span>{" "}
+            <span className="text-[var(--color-gold)]">high school researchers</span>{" "}
             who&apos;ll shape it next.
           </h1>
           <p className="mt-5 max-w-2xl text-lg font-semibold text-[var(--color-panel-ink)]">
@@ -113,7 +103,7 @@ export default function Home() {
           <p className="mt-3 max-w-2xl text-[var(--color-panel-muted)]">
             A student research conference for high school researchers
             worldwide. Submit original work, get real peer review, and
-            present alongside researchers from all over the world.
+            present alongside students from all over the world.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
@@ -139,19 +129,14 @@ export default function Home() {
           </h2>
           <div className="max-w-2xl space-y-3 text-[var(--color-ink)]">
             <p>
-              {conference.acronym} is an annual international conference
+              {conference.acronym} {conference.year} is the inaugural annual international conference
+              hosted by the {conference.hostOrg.name} ({conference.hostOrg.acronym}), and it is
               dedicated to showcasing outstanding research conducted by high
               school students from around the world. It&apos;s a rigorous
               academic forum, not a science fair, where young researchers
-              submit original work, get real peer feedback from a Technical
+              submit original work, receive regirous reviews from a Technical
               Program Committee, and present alongside students from other
               countries.
-            </p>
-            <p>
-              This is the inaugural edition, the first {conference.acronym},
-              run by a brand-new foundation, {conference.hostOrg.name}. We
-              are building the process in the open, and we would rather tell
-              you honestly what is still being decided than guess.
             </p>
           </div>
         </section>
@@ -163,7 +148,7 @@ export default function Home() {
           <dl className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             <div className="border-l-2 border-[var(--color-accent)] pl-4">
               <dt className="text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
-                Conference
+                Conference Dates
               </dt>
               <dd className="mt-1.5 font-semibold">
                 <TBA value={conferenceDates} label="Conference dates" />
@@ -179,7 +164,7 @@ export default function Home() {
             </div>
             <div className="border-l-2 border-[var(--color-accent)] pl-4">
               <dt className="text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
-                Abstract deadline
+                Abstract due date
               </dt>
               <dd className="mt-1.5">
                 <Countdown
@@ -190,7 +175,7 @@ export default function Home() {
             </div>
             <div className="border-l-2 border-[var(--color-accent)] pl-4">
               <dt className="text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
-                Full paper deadline
+                Full paper due date
               </dt>
               <dd className="mt-1.5">
                 <Countdown
@@ -210,11 +195,10 @@ export default function Home() {
 
         <section className="mb-14">
           <h2 className="mb-2 text-2xl font-extrabold tracking-tight">
-            Four research tracks
+            Four research tracks for submission
           </h2>
           <p className="mb-6 max-w-2xl text-[var(--color-ink-muted)]">
-            Explore {conference.theme.title} by picking the track closest
-            to your work, or read all four if you&apos;re not sure yet.
+            Submit your work related to {conference.theme.title} in one of the four research tracks:
           </p>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {conference.tracks.map((track) => (
@@ -226,24 +210,15 @@ export default function Home() {
         <div className="mb-14 max-w-2xl">
           <Callout variant="reassurance" title="Never submitted a research paper before?">
             <p>
-              You&apos;re exactly who this conference is for. Lab and professor requirement is not mandatory. Read the{" "}
-              <Link href="/faq">frequently asked questions</Link> for honest
-              answers to the questions most first-time student researchers
-              have.
+              You are not alone. We create this conference for high school students like you so that
+              you gain such experience in a safe and friendly environment. 
+              Please read the{" "}
+              <Link href="/faq">frequently asked questions</Link> for
+              answers to questions that most first-time student researchers
+              may have.
             </p>
           </Callout>
         </div>
-
-        <section className="max-w-3xl">
-          <h2 className="mb-2 text-2xl font-extrabold tracking-tight">
-            Get involved
-          </h2>
-          <p className="mb-6 max-w-2xl text-[var(--color-ink-muted)]">
-            Not submitting a paper? There are other ways to support the
-            inaugural {conference.acronym} {conference.year}.
-          </p>
-          <GetInvolved />
-        </section>
       </div>
     </>
   );

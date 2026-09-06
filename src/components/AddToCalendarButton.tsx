@@ -32,7 +32,7 @@ export function AddToCalendarButton({
 
   return (
     <button type="button" onClick={handleClick} className={className}>
-      Add key dates to calendar
+      Save key dates to your calendar
     </button>
   );
 }
