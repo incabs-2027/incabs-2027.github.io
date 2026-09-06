@@ -31,7 +31,7 @@ export function TrackRecommender() {
       </h2>
       <p className="mb-4 max-w-2xl text-sm text-[var(--color-ink-muted)]">
         Describe your idea in a sentence or two and we&apos;ll point you at
-        the closest track. It runs entirely in your browser — nothing you
+        the closest track. It runs entirely in your browser, so nothing you
         type is sent or stored anywhere.
       </p>
 
@@ -96,7 +96,7 @@ export function TrackRecommender() {
 
             {runnerUp && (
               <p className="mt-3 border-t border-[var(--color-border)] pt-3 text-sm text-[var(--color-ink-muted)]">
-                Close call —{" "}
+                Close call, though{" "}
                 <a
                   href={`#${runnerUp.track.id}`}
                   className="font-semibold text-[var(--color-brand)] underline underline-offset-2"
@@ -111,7 +111,7 @@ export function TrackRecommender() {
 
         {hasNoSignal && (
           <p className="rounded-md border border-[var(--color-border)] bg-[var(--color-paper)] p-4 text-sm text-[var(--color-ink-muted)]">
-            Not enough to go on yet — try adding a bit more detail (two or
+            Not enough to go on yet. Try adding a bit more detail (two or
             three sentences works well), or just read all four tracks below.
             Reviewers judge substance, not the label.
           </p>

@@ -169,9 +169,9 @@ export default function SubmissionPage() {
             </div>
           </div>
           <p className="text-sm text-[var(--color-ink-muted)]">
-            Roughly what a two-column page in the template looks like — a
+            Roughly what a two-column page in the template looks like: a
             title, an author list, and two columns of body text.{" "}
-            {req.maxPages} of these pages is your full paper,{" "}
+            {req.maxPages} of these pages are your full paper,{" "}
             {req.pageScopeNote}.
           </p>
         </div>
@@ -189,7 +189,7 @@ export default function SubmissionPage() {
             {review.reviewersPerPaper}
           </span>
           <span>
-            Every submission goes through a rigorous review process done by conference's{" "}
+            Every submission goes through a rigorous review process done by the conference's{" "}
             {review.committeeName}.
           </span>
         </p>
@@ -239,7 +239,7 @@ export default function SubmissionPage() {
 
       <Callout variant="reassurance" title="First time submitting a research paper?">
         <p>
-          No a problem. Please read the{" "}
+          Not a problem. Please read the{" "}
           <Link href="/faq">frequently asked questions</Link> for honest
           answers to the questions most first-time student researchers have,
           or check the <Link href="/call-for-papers">Call for Papers</Link>{" "}

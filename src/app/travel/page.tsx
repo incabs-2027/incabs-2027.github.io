@@ -55,7 +55,7 @@ export default function TravelPage() {
       </h2>
       <p className="mb-2">
         Authors who need a visa invitation letter should contact us once
-        registered — details on requesting one will be posted here.
+        registered, and details on requesting one will be posted here.
       </p>
       <p className="mb-8">
         The conference is held in the United States, so most international

@@ -24,7 +24,7 @@ export function buildEventJsonLd(): Record<string, unknown> | null {
   const json: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Event",
-    name: `${conference.acronym} ${conference.year} — ${conference.name}`,
+    name: `${conference.acronym} ${conference.year}: ${conference.name}`,
     description: conference.theme.description,
     startDate: conference.dates.conferenceStart,
     eventStatus: "https://schema.org/EventScheduled",

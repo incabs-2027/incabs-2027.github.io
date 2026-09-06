@@ -27,7 +27,7 @@ const STUDENT: QuestionStep = {
 
 const HOMESCHOOL: QuestionStep = {
   id: "homeschool",
-  prompt: "No worries — are you homeschooled instead?",
+  prompt: "No worries, are you homeschooled instead?",
   options: ["yes", "no"],
 };
 
@@ -94,7 +94,7 @@ export function EligibilityCheck() {
           return {
             id: "result",
             tone: "caution",
-            text: "Worth checking before you invest time in a paper — look up whether your country's Ministry of Education (or equivalent) formally recognizes homeschooling as an education path.",
+            text: "Worth checking before you invest time in a paper: look up whether your country's Ministry of Education (or equivalent) formally recognizes homeschooling as an education path.",
           };
         return {
           id: "result",

@@ -45,7 +45,7 @@ export default function ForTeachersAndParentsPage() {
         How serious is this conference?
       </h2>
       <p className="mb-3">
-        We run this conference as rigorous as any other professional academic conferences
+        We run this conference as rigorously as any other professional academic conference,
         by following exactly the same process. All submitted papers will go through an independent but rigorous
          review process. Each submission will receive about{" "}
         {conference.reviewProcess.reviewersPerPaper} reviews before the paper's acceptance/rejection decision.
@@ -53,7 +53,7 @@ export default function ForTeachersAndParentsPage() {
         <Link href="/submission" className="text-[var(--color-brand)] underline underline-offset-2">
           Submission
         </Link>{" "}
-        page. All submissions have to be formated according to the ACM SIG
+        page. All submissions have to be formatted according to the ACM SIG
         Proceedings format, though{" "}{conference.paperRequirements.acmDisclaimer}
       </p>
       <p className="mb-8">
@@ -67,8 +67,8 @@ export default function ForTeachersAndParentsPage() {
       </p>
       <p className="mb-8">
         The conference is run through volunteers and hosted by the non-profit organization. The conference registration
-        fee will be used to cover the operational cost of running conference (such as venues, materails, and food). Based on the actual submission
-        numbers and the sponsorship received, we will determine a lowest possible registration fee for conference attendees. Before than, no 
+        fee will be used to cover the operational cost of running the conference (such as venues, materials, and food). Based on the actual submission
+        numbers and the sponsorship received, we will determine a lowest possible registration fee for conference attendees. Before then, no
         fee has been announced, and none will be collected until then.
         This website does not carry payment links or fee tables until that
         decision is made and published here first.
@@ -79,7 +79,7 @@ export default function ForTeachersAndParentsPage() {
       </p>
 
       <h2 className="mb-3 text-2xl font-extrabold tracking-tight">
-        What participation involves?
+        What does participation involve?
       </h2>
       <p className="mb-4">
         A student submits an abstract, then a full paper. The papers go through
@@ -104,7 +104,7 @@ export default function ForTeachersAndParentsPage() {
         <Link href="/travel" className="text-[var(--color-brand)] underline underline-offset-2">
           Travel &amp; Venue
         </Link>{" "}
-        page — particularly the visa guidance — well before the registration
+        page, particularly the visa guidance, well before the registration
         deadline.
       </p>
 
@@ -119,7 +119,7 @@ export default function ForTeachersAndParentsPage() {
           {conference.submissionPlatform.name}, a separate external platform
           run by Microsoft that carries its own privacy policy and account
           system. Students create an account there, not here. We are not in a
-          position to make promises on that platform&apos;s behalf — please
+          position to make promises on that platform&apos;s behalf, so please
           read its own terms. The{" "}
           <Link href="/submission">Submission</Link> page links straight to
           it.

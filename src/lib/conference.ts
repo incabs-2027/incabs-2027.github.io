@@ -381,7 +381,7 @@ export const conference: ConferenceData = {
         amount: null,
         opensOn: dates.regularRegistrationOpens,
         deadline: null,
-        note: "Stays open until the conference daytes.",
+        note: "Stays open until the conference dates.",
       },
     ],
   },

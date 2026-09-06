@@ -35,7 +35,7 @@ export default function CallForPapersPage() {
     <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-14 lg:px-10 xl:px-16 3xl:max-w-4xl">
       <h1 className="mb-3 text-4xl font-extrabold tracking-tight">Call for Papers</h1>
       <p className="mb-6 max-w-2xl text-[var(--color-ink-muted)]">
-        Everything below is also available as a single printable document —
+        Everything below is also available as a single printable document,
         useful for sharing with a teacher, a mentor, or a school.
       </p>
 

@@ -12,7 +12,7 @@ export function SubmissionChecklist() {
   const items = [
     `Written in ${req.language}.`,
     `At most ${req.maxPages} pages, ${req.pageScopeNote}.`,
-    "Original work — not previously published, and not under review elsewhere.",
+    "Original work, not previously published, and not under review elsewhere.",
     `Formatted using the ${req.templateName}.`,
     `Saved as a ${req.fileFormat}.`,
     ...req.requiredSections.map(
@@ -36,7 +36,7 @@ export function SubmissionChecklist() {
       </h2>
       <p className="mb-4 max-w-2xl text-sm text-[var(--color-ink-muted)]">
         Check off each requirement as you confirm it. {checkedCount} of{" "}
-        {items.length} so far — nothing here is saved or sent anywhere.
+        {items.length} so far. Nothing here is saved or sent anywhere.
       </p>
 
       <ul className="mb-4 space-y-2.5">

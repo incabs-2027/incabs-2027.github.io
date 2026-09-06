@@ -134,7 +134,7 @@ export default function Home() {
               dedicated to showcasing outstanding research conducted by high
               school students from around the world. It&apos;s a rigorous
               academic forum, not a science fair, where young researchers
-              submit original work, receive regirous reviews from a Technical
+              submit original work, receive rigorous reviews from a Technical
               Program Committee, and present alongside students from other
               countries.
             </p>
@@ -210,8 +210,8 @@ export default function Home() {
         <div className="mb-14 max-w-2xl">
           <Callout variant="reassurance" title="Never submitted a research paper before?">
             <p>
-              You are not alone. We create this conference for high school students like you so that
-              you gain such experience in a safe and friendly environment. 
+              You are not alone. We built this conference for high school students like you,
+              so you can gain that experience in a safe, supportive environment.
               Please read the{" "}
               <Link href="/faq">frequently asked questions</Link> for
               answers to questions that most first-time student researchers
