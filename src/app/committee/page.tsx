@@ -25,32 +25,39 @@ export default function CommitteePage() {
 
       <div className="mb-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {conference.committee.map((member) => (
-          <div
+          // Full-bleed: the photo (or, until one exists, an initials plate)
+          // fills the entire 4:5 card, with details overlaid on a scrim.
+          <article
             key={member.name}
-            className="flex h-full flex-col items-center rounded-lg border-t-4 border-t-[var(--color-brand)] bg-[var(--color-paper)] p-6 text-center shadow-sm"
+            className="group relative aspect-[4/5] overflow-hidden rounded-2xl shadow-sm transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0"
           >
             {member.photoUrl ? (
               <Image
                 src={member.photoUrl}
                 alt={member.name}
-                width={96}
-                height={96}
-                className="h-24 w-24 shrink-0 rounded-full object-cover"
+                fill
+                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                className="object-cover"
               />
             ) : (
-              <span
+              <div
                 aria-hidden="true"
-                className="flex h-24 w-24 shrink-0 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-paper-raised)] text-2xl font-bold text-[var(--color-ink-muted)]"
+                className="flex h-full w-full items-center justify-center bg-[var(--color-panel-raised)] text-5xl font-bold text-[var(--color-panel-muted)]"
               >
                 {initials(member.name)}
-              </span>
+              </div>
             )}
-            <p className="mt-4 text-lg font-bold tracking-tight">{member.name}</p>
-            <p className="text-[var(--color-ink-muted)]">{member.role}</p>
-            <p className="mt-2 text-sm">
-              Affiliation: <TBA value={member.affiliation} label="Affiliation" />
-            </p>
-          </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[rgba(8,16,28,0.92)] from-10% via-[rgba(8,16,28,0.55)] via-40% to-transparent to-70%" />
+            <div className="absolute inset-x-0 bottom-0 p-5">
+              <p className="text-lg font-extrabold text-white">{member.name}</p>
+              <p className="text-xs font-bold uppercase tracking-wide text-[#8fd9dc]">
+                {member.role}
+              </p>
+              <p className="mt-1.5 text-sm text-white/80">
+                Affiliation: <TBA value={member.affiliation} label="Affiliation" />
+              </p>
+            </div>
+          </article>
         ))}
       </div>
 
