@@ -46,6 +46,11 @@ export default function ContactPage() {
         Get involved
       </h2>
       <GetInvolved />
+
+      <h2 className="mb-4 mt-10 text-2xl font-extrabold tracking-tight">
+        Acknowledgement
+      </h2>
+      <p>{conference.acknowledgement}</p>
     </div>
   );
 }

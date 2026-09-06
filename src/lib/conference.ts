@@ -99,6 +99,7 @@ export type ConferenceData = {
   };
   committee: CommitteeMember[];
   committeeClosingNote: string;
+  acknowledgement: string;
   contact: {
     emails: string[];
   };
@@ -329,16 +330,24 @@ export const conference: ConferenceData = {
       name: "Chenlyvia Xiong",
       role: "Founding General Chair & Program Chair",
       affiliation: "Ronald Reagan High School, San Antonio, Texas",
-      photoUrl: null,
+      photoUrl: "/images/leadership/chenlyvia-xiong.jpg",
     },
     {
       name: "Zimo Wen",
-      role: "Treasurer",
+      role: "Vice President of inCABS 2027",
       affiliation: "Williamsville East High School, Buffalo, New York",
+      photoUrl: "/images/leadership/zimo-wen.jpg",
+    },
+    {
+      name: "Amy Liu",
+      role: "Treasurer of inCABS 2027",
+      affiliation: "Round Rock High School, Round Rock, Texas",
       photoUrl: null,
     },
   ],
   committeeClosingNote: "Additional committee members will be announced.",
+  acknowledgement:
+    "Thank you to Sri Bhargava Bhamidi for building the initial website for inCABS.",
   contact: {
     emails: ["incabs2027@gmail.com"],
   },
