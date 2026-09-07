@@ -18,7 +18,7 @@ function initials(name: string): string {
 
 export default function CommitteePage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-14 lg:px-10 xl:px-16 3xl:max-w-4xl">
+    <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-14 lg:px-10 xl:px-16 3xl:max-w-6xl">
       <h1 className="mb-6 text-4xl font-extrabold tracking-tight">
         Organizing Committee
       </h1>
@@ -61,14 +61,14 @@ export default function CommitteePage() {
         ))}
       </div>
 
-      <p className="mb-4">
+      <p className="mb-4 max-w-2xl">
         The Technical Program Committee, the group of reviewers who
         evaluate submitted papers, is still being formed. Each paper is
         reviewed by approximately {conference.reviewProcess.reviewersPerPaper}{" "}
         independent reviewers with expertise relevant to its track.
       </p>
 
-      <p className="text-[var(--color-ink-muted)]">
+      <p className="max-w-2xl text-[var(--color-ink-muted)]">
         {conference.committeeClosingNote}
       </p>
     </div>
