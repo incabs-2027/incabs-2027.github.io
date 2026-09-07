@@ -33,9 +33,9 @@ export default function ForTeachersAndParentsPage() {
       <p className="mb-8">
         {conference.acronym} {conference.year} is organized by{" "}
         {conference.hostOrg.name} ({conference.hostOrg.acronym}). The
-        General Chair and Program Chair is Ms. {conference.committee[0].name}
+        General Chair and Program Chair is {conference.committee[0].name}
         {conference.committee[0].affiliation
-          ? `, ${conference.committee[0].affiliation}`
+          ? `, who attends ${conference.committee[0].affiliation}`
           : ""}
         . This is the inaugural edition, the first time this conference has
         run.
