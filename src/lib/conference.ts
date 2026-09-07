@@ -336,15 +336,9 @@ export const conference: ConferenceData = {
     },
     {
       name: "Zimo Wen",
-      role: "Vice President of inCABS 2027",
+      role: "Treasurer of inCABS 2027",
       affiliation: "Williamsville East High School, Buffalo, New York",
       photoUrl: "/images/leadership/zimo-wen.jpg",
-    },
-    {
-      name: "Amy Liu",
-      role: "Treasurer of inCABS 2027",
-      affiliation: "Round Rock High School, Round Rock, Texas",
-      photoUrl: null,
     },
   ],
   committeeClosingNote: "Additional committee members will be announced.",
