@@ -336,7 +336,7 @@ export const conference: ConferenceData = {
     },
     {
       name: "Zimo Wen",
-      role: "Treasurer of inCABS 2027",
+      role: "Treasurer",
       affiliation: "Williamsville East High School, Buffalo, New York",
       photoUrl: "/images/leadership/zimo-wen.jpg",
     },
